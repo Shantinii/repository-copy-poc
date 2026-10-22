@@ -1,0 +1,42 @@
+PHASE 2 REVIEW DECISION
+
+Decision: CHANGES REQUIRED — DO NOT MARK THE MAPPING APPROVED YET.
+
+Confirmed from the uploaded reports:
+- 10 workbook sheets, 100 rows per sheet.
+- Current scope: bi_patient data (30 columns), bi_visit data (26), bi_diagnosis data (18).
+- 74 inventoried columns; 8 entirely empty columns excluded; 66 populated columns included.
+- Candidate keys are complete and unique in this 100-row sample:
+  bi_patient data.DeID, bi_visit data.VisitID, bi_diagnosis data.diagnosisid.
+- Selected-scope references are consistent: no unmatched Visit.DeID, Diagnosis.DeID, Diagnosis.VisitID, or diagnosis patient/visit pairs.
+- No full duplicate rows were detected in any of the 10 sheets.
+- Whitespace around text values exists: patient 9 cells, visit 8, diagnosis 2. Other sheets have additional whitespace, notably operation procedure.
+- Visit date chronology checks passed for the three available pairs in the selected visit table.
+
+Required corrections:
+1. Destination column naming:
+   The generated mapping inserted underscores into camel-case names (e.g. DeID -> de_id, VisitID -> visit_id). The described loader standardises case and spaces/hyphens, but does not necessarily split camel case. This reviewed mapping uses deid and visitid to align with that convention. Verify against the actual loader's column-normalisation function before DDL.
+2. Waiting_time:
+   Source dtype is object/string, but the generated mapping incorrectly suggested DATETIME because the column name contains "time". This is not safe. Its semantic meaning must be confirmed; keep it as VARCHAR(64) temporarily or map to TIME/numeric duration only after checking the data dictionary.
+3. Numeric types:
+   BIGINT is plausible for integer-like fields but must be confirmed for semantics and range. This particularly applies to Triage_level, Location_id, Length_of_stay, QC fields and age fields. If Location_id is a code, preserve as text where formatting matters.
+4. Identifiers and codes:
+   Posscode and location_code are correctly flagged to preserve as text. Confirm whether other codes such as kod are categorical codes before final SQL type decisions.
+5. Missing values:
+   Keep missing cells as SQL NULL. Do not convert missing values to zero or the string "nan".
+6. Whitespace:
+   Decide whether to trim leading/trailing whitespace. Do not silently alter source values. If trimming is approved, apply consistently and record it.
+7. QC fields:
+   The mapping includes populated QC/quality-control columns. Keep them for now to preserve the sample, unless the project owner confirms they are out of scope.
+8. Foreign keys:
+   Relationship checks passed on this sample, but define the foreign keys in the destination only after confirming the destination column names and DDL match the loader.
+
+Out-of-scope findings:
+- The workbook's medication, operation-procedure and laboratory sheets have chronology anomalies in the audit. These are outside the three-table POC scope and need separate semantic review before those tables are added.
+- The other sheets have unmatched references against the 100-row selected sample. Because this may be a partial sample, do not treat those counts as proof of broken source relationships.
+
+Next gate:
+- Compare the revised mapping's destination names against the actual loader's normalisation function.
+- Confirm Waiting_time semantics.
+- Review integer-like columns and text trimming rules.
+- Then freeze the mapping and proceed to database integration tests.

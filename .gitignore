@@ -1,0 +1,38 @@
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Jupyter notebook checkpoints
+.ipynb_checkpoints/
+
+# Environment variables and credentials
+.env
+.env.*
+!.env.example
+
+# Local databases and database exports
+*.db
+*.sqlite
+*.sqlite3
+*.sql
+*.dump
+
+# Raw, cleaned and exported data
+data/
+*.xlsx
+*.xls
+*.csv
+*.parquet
+
+# Logs and temporary files
+*.log
+*.tmp
+
+# Operating system files
+.DS_Store
+Thumbs.db
+*.jsonl
+backups/
