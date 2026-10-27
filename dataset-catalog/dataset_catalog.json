@@ -1,0 +1,52 @@
+[
+  {
+    "dataset_id": "DS_PATIENT",
+    "display_label": "Patient Demographics",
+    "source_worksheet": "bi_patient data"
+  },
+  {
+    "dataset_id": "DS_VISIT",
+    "display_label": "Visits",
+    "source_worksheet": "bi_visit data"
+  },
+  {
+    "dataset_id": "DS_DIAGNOSIS",
+    "display_label": "Diagnoses",
+    "source_worksheet": "bi_diagnosis data"
+  },
+  {
+    "dataset_id": "DS_ENDOSCOPY_PROCEDURE",
+    "display_label": "Endoscopy Procedures",
+    "source_worksheet": "bi_endoscopy_procedure d"
+  },
+  {
+    "dataset_id": "DS_MEDICATION",
+    "display_label": "Medications",
+    "source_worksheet": "bi_medication data"
+  },
+  {
+    "dataset_id": "DS_NEUROLOGY_PROCEDURE",
+    "display_label": "Neurology Procedures",
+    "source_worksheet": "bi_neurology_procedure d"
+  },
+  {
+    "dataset_id": "DS_OPERATION_PROCEDURE",
+    "display_label": "Operation Procedures",
+    "source_worksheet": "bi_operation_procedure sample d"
+  },
+  {
+    "dataset_id": "DS_RADIOLOGY_PROCEDURE",
+    "display_label": "Radiology Procedures",
+    "source_worksheet": "bi_radiology_procedure d"
+  },
+  {
+    "dataset_id": "DS_LABORATORY_PROCEDURE",
+    "display_label": "Laboratory Procedures",
+    "source_worksheet": "bi_laboratory_procedure "
+  },
+  {
+    "dataset_id": "DS_VITAL_SIGNS",
+    "display_label": "Vital Signs",
+    "source_worksheet": "vitalsign data"
+  }
+]
