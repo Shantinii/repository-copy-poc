@@ -1,0 +1,2600 @@
+{
+  "source_workbook": "sample data excel.xlsx",
+  "target_schema": "haven_poc_source",
+  "load_mode": "raw_staging_text",
+  "source_workbook_modified": false,
+  "existing_tables_modified": false,
+  "total_worksheets": 10,
+  "total_rows": 1000,
+  "total_columns": 310,
+  "blank_headers": [
+    {
+      "dataset_id": "DS_RADIOLOGY_PROCEDURE",
+      "source_sheet": "bi_radiology_procedure d",
+      "source_column_position": 39,
+      "source_header_original": null,
+      "staging_column_name": "__source_column_039",
+      "blank_header_mapped": true
+    }
+  ],
+  "column_mapping": [
+    {
+      "dataset_id": "DS_PATIENT",
+      "source_sheet": "bi_patient data",
+      "source_column_position": 1,
+      "source_header_original": "DeID",
+      "staging_column_name": "DeID",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_PATIENT",
+      "source_sheet": "bi_patient data",
+      "source_column_position": 2,
+      "source_header_original": "Age",
+      "staging_column_name": "Age",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_PATIENT",
+      "source_sheet": "bi_patient data",
+      "source_column_position": 3,
+      "source_header_original": "DOB",
+      "staging_column_name": "DOB",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_PATIENT",
+      "source_sheet": "bi_patient data",
+      "source_column_position": 4,
+      "source_header_original": "Gender",
+      "staging_column_name": "Gender",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_PATIENT",
+      "source_sheet": "bi_patient data",
+      "source_column_position": 5,
+      "source_header_original": "Marital_status",
+      "staging_column_name": "Marital_status",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_PATIENT",
+      "source_sheet": "bi_patient data",
+      "source_column_position": 6,
+      "source_header_original": "Warganegara",
+      "staging_column_name": "Warganegara",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_PATIENT",
+      "source_sheet": "bi_patient data",
+      "source_column_position": 7,
+      "source_header_original": "Posscode",
+      "staging_column_name": "Posscode",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_PATIENT",
+      "source_sheet": "bi_patient data",
+      "source_column_position": 8,
+      "source_header_original": "State",
+      "staging_column_name": "State",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_PATIENT",
+      "source_sheet": "bi_patient data",
+      "source_column_position": 9,
+      "source_header_original": "District",
+      "staging_column_name": "District",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_PATIENT",
+      "source_sheet": "bi_patient data",
+      "source_column_position": 10,
+      "source_header_original": "Status",
+      "staging_column_name": "Status",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_PATIENT",
+      "source_sheet": "bi_patient data",
+      "source_column_position": 11,
+      "source_header_original": "Survival_status",
+      "staging_column_name": "Survival_status",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_PATIENT",
+      "source_sheet": "bi_patient data",
+      "source_column_position": 12,
+      "source_header_original": "Dateofdeath",
+      "staging_column_name": "Dateofdeath",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_PATIENT",
+      "source_sheet": "bi_patient data",
+      "source_column_position": 13,
+      "source_header_original": "Causeofdeath",
+      "staging_column_name": "Causeofdeath",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_PATIENT",
+      "source_sheet": "bi_patient data",
+      "source_column_position": 14,
+      "source_header_original": "Type",
+      "staging_column_name": "Type",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_PATIENT",
+      "source_sheet": "bi_patient data",
+      "source_column_position": 15,
+      "source_header_original": "Occupation",
+      "staging_column_name": "Occupation",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_PATIENT",
+      "source_sheet": "bi_patient data",
+      "source_column_position": 16,
+      "source_header_original": "Income_category",
+      "staging_column_name": "Income_category",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_PATIENT",
+      "source_sheet": "bi_patient data",
+      "source_column_position": 17,
+      "source_header_original": "Race",
+      "staging_column_name": "Race",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_PATIENT",
+      "source_sheet": "bi_patient data",
+      "source_column_position": 18,
+      "source_header_original": "Spoken_language",
+      "staging_column_name": "Spoken_language",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_PATIENT",
+      "source_sheet": "bi_patient data",
+      "source_column_position": 19,
+      "source_header_original": "Mode_of_transportation",
+      "staging_column_name": "Mode_of_transportation",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_PATIENT",
+      "source_sheet": "bi_patient data",
+      "source_column_position": 20,
+      "source_header_original": "OKU_status",
+      "staging_column_name": "OKU_status",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_PATIENT",
+      "source_sheet": "bi_patient data",
+      "source_column_position": 21,
+      "source_header_original": "Assisting_aids",
+      "staging_column_name": "Assisting_aids",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_PATIENT",
+      "source_sheet": "bi_patient data",
+      "source_column_position": 22,
+      "source_header_original": "JKM_status",
+      "staging_column_name": "JKM_status",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_PATIENT",
+      "source_sheet": "bi_patient data",
+      "source_column_position": 23,
+      "source_header_original": "visit_2019",
+      "staging_column_name": "visit_2019",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_PATIENT",
+      "source_sheet": "bi_patient data",
+      "source_column_position": 24,
+      "source_header_original": "QC_gender",
+      "staging_column_name": "QC_gender",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_PATIENT",
+      "source_sheet": "bi_patient data",
+      "source_column_position": 25,
+      "source_header_original": "QC_visit",
+      "staging_column_name": "QC_visit",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_PATIENT",
+      "source_sheet": "bi_patient data",
+      "source_column_position": 26,
+      "source_header_original": "visit_2020",
+      "staging_column_name": "visit_2020",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_PATIENT",
+      "source_sheet": "bi_patient data",
+      "source_column_position": 27,
+      "source_header_original": "visit_2021",
+      "staging_column_name": "visit_2021",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_PATIENT",
+      "source_sheet": "bi_patient data",
+      "source_column_position": 28,
+      "source_header_original": "QC",
+      "staging_column_name": "QC",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_PATIENT",
+      "source_sheet": "bi_patient data",
+      "source_column_position": 29,
+      "source_header_original": "QC_Age",
+      "staging_column_name": "QC_Age",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_PATIENT",
+      "source_sheet": "bi_patient data",
+      "source_column_position": 30,
+      "source_header_original": "QC_bloodprofile",
+      "staging_column_name": "QC_bloodprofile",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_VISIT",
+      "source_sheet": "bi_visit data",
+      "source_column_position": 1,
+      "source_header_original": "DeID",
+      "staging_column_name": "DeID",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_VISIT",
+      "source_sheet": "bi_visit data",
+      "source_column_position": 2,
+      "source_header_original": "VisitID",
+      "staging_column_name": "VisitID",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_VISIT",
+      "source_sheet": "bi_visit data",
+      "source_column_position": 3,
+      "source_header_original": "Visit_type",
+      "staging_column_name": "Visit_type",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_VISIT",
+      "source_sheet": "bi_visit data",
+      "source_column_position": 4,
+      "source_header_original": "Patient_type",
+      "staging_column_name": "Patient_type",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_VISIT",
+      "source_sheet": "bi_visit data",
+      "source_column_position": 5,
+      "source_header_original": "Registration_datetime",
+      "staging_column_name": "Registration_datetime",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_VISIT",
+      "source_sheet": "bi_visit data",
+      "source_column_position": 6,
+      "source_header_original": "Admission_datetime",
+      "staging_column_name": "Admission_datetime",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_VISIT",
+      "source_sheet": "bi_visit data",
+      "source_column_position": 7,
+      "source_header_original": "Seen_time",
+      "staging_column_name": "Seen_time",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_VISIT",
+      "source_sheet": "bi_visit data",
+      "source_column_position": 8,
+      "source_header_original": "Triage_level",
+      "staging_column_name": "Triage_level",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_VISIT",
+      "source_sheet": "bi_visit data",
+      "source_column_position": 9,
+      "source_header_original": "location_code",
+      "staging_column_name": "location_code",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_VISIT",
+      "source_sheet": "bi_visit data",
+      "source_column_position": 10,
+      "source_header_original": "Location_id",
+      "staging_column_name": "Location_id",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_VISIT",
+      "source_sheet": "bi_visit data",
+      "source_column_position": 11,
+      "source_header_original": "Location_description",
+      "staging_column_name": "Location_description",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_VISIT",
+      "source_sheet": "bi_visit data",
+      "source_column_position": 12,
+      "source_header_original": "Specialty",
+      "staging_column_name": "Specialty",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_VISIT",
+      "source_sheet": "bi_visit data",
+      "source_column_position": 13,
+      "source_header_original": "Sub_specialty",
+      "staging_column_name": "Sub_specialty",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_VISIT",
+      "source_sheet": "bi_visit data",
+      "source_column_position": 14,
+      "source_header_original": "Discharge_datetime",
+      "staging_column_name": "Discharge_datetime",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_VISIT",
+      "source_sheet": "bi_visit data",
+      "source_column_position": 15,
+      "source_header_original": "Discharge_type",
+      "staging_column_name": "Discharge_type",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_VISIT",
+      "source_sheet": "bi_visit data",
+      "source_column_position": 16,
+      "source_header_original": "Length_of_stay",
+      "staging_column_name": "Length_of_stay",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_VISIT",
+      "source_sheet": "bi_visit data",
+      "source_column_position": 17,
+      "source_header_original": "Waiting_time",
+      "staging_column_name": "Waiting_time",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_VISIT",
+      "source_sheet": "bi_visit data",
+      "source_column_position": 18,
+      "source_header_original": "ANE_return",
+      "staging_column_name": "ANE_return",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_VISIT",
+      "source_sheet": "bi_visit data",
+      "source_column_position": 19,
+      "source_header_original": "QC",
+      "staging_column_name": "QC",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_VISIT",
+      "source_sheet": "bi_visit data",
+      "source_column_position": 20,
+      "source_header_original": "casemix",
+      "staging_column_name": "casemix",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_VISIT",
+      "source_sheet": "bi_visit data",
+      "source_column_position": 21,
+      "source_header_original": "lab",
+      "staging_column_name": "lab",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_VISIT",
+      "source_sheet": "bi_visit data",
+      "source_column_position": 22,
+      "source_header_original": "QC_locationcode",
+      "staging_column_name": "QC_locationcode",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_VISIT",
+      "source_sheet": "bi_visit data",
+      "source_column_position": 23,
+      "source_header_original": "qc_opvisit",
+      "staging_column_name": "qc_opvisit",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_VISIT",
+      "source_sheet": "bi_visit data",
+      "source_column_position": 24,
+      "source_header_original": "QC_waitingtime",
+      "staging_column_name": "QC_waitingtime",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_VISIT",
+      "source_sheet": "bi_visit data",
+      "source_column_position": 25,
+      "source_header_original": "op_kehadiranpesakit",
+      "staging_column_name": "op_kehadiranpesakit",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_VISIT",
+      "source_sheet": "bi_visit data",
+      "source_column_position": 26,
+      "source_header_original": "chk_symptoms",
+      "staging_column_name": "chk_symptoms",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_DIAGNOSIS",
+      "source_sheet": "bi_diagnosis data",
+      "source_column_position": 1,
+      "source_header_original": "DeID",
+      "staging_column_name": "DeID",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_DIAGNOSIS",
+      "source_sheet": "bi_diagnosis data",
+      "source_column_position": 2,
+      "source_header_original": "VisitID",
+      "staging_column_name": "VisitID",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_DIAGNOSIS",
+      "source_sheet": "bi_diagnosis data",
+      "source_column_position": 3,
+      "source_header_original": "Diagnosis_datetime",
+      "staging_column_name": "Diagnosis_datetime",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_DIAGNOSIS",
+      "source_sheet": "bi_diagnosis data",
+      "source_column_position": 4,
+      "source_header_original": "kod",
+      "staging_column_name": "kod",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_DIAGNOSIS",
+      "source_sheet": "bi_diagnosis data",
+      "source_column_position": 5,
+      "source_header_original": "Description",
+      "staging_column_name": "Description",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_DIAGNOSIS",
+      "source_sheet": "bi_diagnosis data",
+      "source_column_position": 6,
+      "source_header_original": "Diagnosis_level",
+      "staging_column_name": "Diagnosis_level",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_DIAGNOSIS",
+      "source_sheet": "bi_diagnosis data",
+      "source_column_position": 7,
+      "source_header_original": "Diagnosis_Category",
+      "staging_column_name": "Diagnosis_Category",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_DIAGNOSIS",
+      "source_sheet": "bi_diagnosis data",
+      "source_column_position": 8,
+      "source_header_original": "Method_of_diagnosis",
+      "staging_column_name": "Method_of_diagnosis",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_DIAGNOSIS",
+      "source_sheet": "bi_diagnosis data",
+      "source_column_position": 9,
+      "source_header_original": "Diagnosis_by",
+      "staging_column_name": "Diagnosis_by",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_DIAGNOSIS",
+      "source_sheet": "bi_diagnosis data",
+      "source_column_position": 10,
+      "source_header_original": "Remarks",
+      "staging_column_name": "Remarks",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_DIAGNOSIS",
+      "source_sheet": "bi_diagnosis data",
+      "source_column_position": 11,
+      "source_header_original": "Age_year_diagnosis",
+      "staging_column_name": "Age_year_diagnosis",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_DIAGNOSIS",
+      "source_sheet": "bi_diagnosis data",
+      "source_column_position": 12,
+      "source_header_original": "Age_month_diagnosis",
+      "staging_column_name": "Age_month_diagnosis",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_DIAGNOSIS",
+      "source_sheet": "bi_diagnosis data",
+      "source_column_position": 13,
+      "source_header_original": "diagnosisid",
+      "staging_column_name": "diagnosisid",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_DIAGNOSIS",
+      "source_sheet": "bi_diagnosis data",
+      "source_column_position": 14,
+      "source_header_original": "DOB",
+      "staging_column_name": "DOB",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_DIAGNOSIS",
+      "source_sheet": "bi_diagnosis data",
+      "source_column_position": 15,
+      "source_header_original": "checklist",
+      "staging_column_name": "checklist",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_DIAGNOSIS",
+      "source_sheet": "bi_diagnosis data",
+      "source_column_position": 16,
+      "source_header_original": "QC_round1",
+      "staging_column_name": "QC_round1",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_DIAGNOSIS",
+      "source_sheet": "bi_diagnosis data",
+      "source_column_position": 17,
+      "source_header_original": "tbl",
+      "staging_column_name": "tbl",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_DIAGNOSIS",
+      "source_sheet": "bi_diagnosis data",
+      "source_column_position": 18,
+      "source_header_original": "QC_age",
+      "staging_column_name": "QC_age",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_ENDOSCOPY_PROCEDURE",
+      "source_sheet": "bi_endoscopy_procedure d",
+      "source_column_position": 1,
+      "source_header_original": "DeID",
+      "staging_column_name": "DeID",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_ENDOSCOPY_PROCEDURE",
+      "source_sheet": "bi_endoscopy_procedure d",
+      "source_column_position": 2,
+      "source_header_original": "VisitID",
+      "staging_column_name": "VisitID",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_ENDOSCOPY_PROCEDURE",
+      "source_sheet": "bi_endoscopy_procedure d",
+      "source_column_position": 3,
+      "source_header_original": "Test_code",
+      "staging_column_name": "Test_code",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_ENDOSCOPY_PROCEDURE",
+      "source_sheet": "bi_endoscopy_procedure d",
+      "source_column_position": 4,
+      "source_header_original": "Test_description",
+      "staging_column_name": "Test_description",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_ENDOSCOPY_PROCEDURE",
+      "source_sheet": "bi_endoscopy_procedure d",
+      "source_column_position": 5,
+      "source_header_original": "Internal_code",
+      "staging_column_name": "Internal_code",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_ENDOSCOPY_PROCEDURE",
+      "source_sheet": "bi_endoscopy_procedure d",
+      "source_column_position": 6,
+      "source_header_original": "Procedure_type",
+      "staging_column_name": "Procedure_type",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_ENDOSCOPY_PROCEDURE",
+      "source_sheet": "bi_endoscopy_procedure d",
+      "source_column_position": 7,
+      "source_header_original": "Procedure_duration",
+      "staging_column_name": "Procedure_duration",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_ENDOSCOPY_PROCEDURE",
+      "source_sheet": "bi_endoscopy_procedure d",
+      "source_column_position": 8,
+      "source_header_original": "Procedure_date",
+      "staging_column_name": "Procedure_date",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_ENDOSCOPY_PROCEDURE",
+      "source_sheet": "bi_endoscopy_procedure d",
+      "source_column_position": 9,
+      "source_header_original": "Requester",
+      "staging_column_name": "Requester",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_ENDOSCOPY_PROCEDURE",
+      "source_sheet": "bi_endoscopy_procedure d",
+      "source_column_position": 10,
+      "source_header_original": "Requester_specialty",
+      "staging_column_name": "Requester_specialty",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_ENDOSCOPY_PROCEDURE",
+      "source_sheet": "bi_endoscopy_procedure d",
+      "source_column_position": 11,
+      "source_header_original": "MLT1",
+      "staging_column_name": "MLT1",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_ENDOSCOPY_PROCEDURE",
+      "source_sheet": "bi_endoscopy_procedure d",
+      "source_column_position": 12,
+      "source_header_original": "MLT3",
+      "staging_column_name": "MLT3",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_ENDOSCOPY_PROCEDURE",
+      "source_sheet": "bi_endoscopy_procedure d",
+      "source_column_position": 13,
+      "source_header_original": "MLT4",
+      "staging_column_name": "MLT4",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_ENDOSCOPY_PROCEDURE",
+      "source_sheet": "bi_endoscopy_procedure d",
+      "source_column_position": 14,
+      "source_header_original": "MLT5",
+      "staging_column_name": "MLT5",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_ENDOSCOPY_PROCEDURE",
+      "source_sheet": "bi_endoscopy_procedure d",
+      "source_column_position": 15,
+      "source_header_original": "gastroenterologist1",
+      "staging_column_name": "gastroenterologist1",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_ENDOSCOPY_PROCEDURE",
+      "source_sheet": "bi_endoscopy_procedure d",
+      "source_column_position": 16,
+      "source_header_original": "gastroenterologist2",
+      "staging_column_name": "gastroenterologist2",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_ENDOSCOPY_PROCEDURE",
+      "source_sheet": "bi_endoscopy_procedure d",
+      "source_column_position": 17,
+      "source_header_original": "gastroenterologist3",
+      "staging_column_name": "gastroenterologist3",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_ENDOSCOPY_PROCEDURE",
+      "source_sheet": "bi_endoscopy_procedure d",
+      "source_column_position": 18,
+      "source_header_original": "gastroenterologist4",
+      "staging_column_name": "gastroenterologist4",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_ENDOSCOPY_PROCEDURE",
+      "source_sheet": "bi_endoscopy_procedure d",
+      "source_column_position": 19,
+      "source_header_original": "gastroenterologist5",
+      "staging_column_name": "gastroenterologist5",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_ENDOSCOPY_PROCEDURE",
+      "source_sheet": "bi_endoscopy_procedure d",
+      "source_column_position": 20,
+      "source_header_original": "Order_urgency",
+      "staging_column_name": "Order_urgency",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_ENDOSCOPY_PROCEDURE",
+      "source_sheet": "bi_endoscopy_procedure d",
+      "source_column_position": 21,
+      "source_header_original": "Assisting_aids",
+      "staging_column_name": "Assisting_aids",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_ENDOSCOPY_PROCEDURE",
+      "source_sheet": "bi_endoscopy_procedure d",
+      "source_column_position": 22,
+      "source_header_original": "Accession_number",
+      "staging_column_name": "Accession_number",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_ENDOSCOPY_PROCEDURE",
+      "source_sheet": "bi_endoscopy_procedure d",
+      "source_column_position": 23,
+      "source_header_original": "Result_datetime",
+      "staging_column_name": "Result_datetime",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_ENDOSCOPY_PROCEDURE",
+      "source_sheet": "bi_endoscopy_procedure d",
+      "source_column_position": 24,
+      "source_header_original": "Final_report",
+      "staging_column_name": "Final_report",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_ENDOSCOPY_PROCEDURE",
+      "source_sheet": "bi_endoscopy_procedure d",
+      "source_column_position": 25,
+      "source_header_original": "Result_description",
+      "staging_column_name": "Result_description",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_ENDOSCOPY_PROCEDURE",
+      "source_sheet": "bi_endoscopy_procedure d",
+      "source_column_position": 26,
+      "source_header_original": "Charges",
+      "staging_column_name": "Charges",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_ENDOSCOPY_PROCEDURE",
+      "source_sheet": "bi_endoscopy_procedure d",
+      "source_column_position": 27,
+      "source_header_original": "Endoscopy_section",
+      "staging_column_name": "Endoscopy_section",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_ENDOSCOPY_PROCEDURE",
+      "source_sheet": "bi_endoscopy_procedure d",
+      "source_column_position": 28,
+      "source_header_original": "Modality",
+      "staging_column_name": "Modality",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_ENDOSCOPY_PROCEDURE",
+      "source_sheet": "bi_endoscopy_procedure d",
+      "source_column_position": 29,
+      "source_header_original": "DurationA",
+      "staging_column_name": "DurationA",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_ENDOSCOPY_PROCEDURE",
+      "source_sheet": "bi_endoscopy_procedure d",
+      "source_column_position": 30,
+      "source_header_original": "DurationB",
+      "staging_column_name": "DurationB",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_ENDOSCOPY_PROCEDURE",
+      "source_sheet": "bi_endoscopy_procedure d",
+      "source_column_position": 31,
+      "source_header_original": "DurationC",
+      "staging_column_name": "DurationC",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_ENDOSCOPY_PROCEDURE",
+      "source_sheet": "bi_endoscopy_procedure d",
+      "source_column_position": 32,
+      "source_header_original": "DurationD",
+      "staging_column_name": "DurationD",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_ENDOSCOPY_PROCEDURE",
+      "source_sheet": "bi_endoscopy_procedure d",
+      "source_column_position": 33,
+      "source_header_original": "DurationE",
+      "staging_column_name": "DurationE",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_ENDOSCOPY_PROCEDURE",
+      "source_sheet": "bi_endoscopy_procedure d",
+      "source_column_position": 34,
+      "source_header_original": "DurationF",
+      "staging_column_name": "DurationF",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_ENDOSCOPY_PROCEDURE",
+      "source_sheet": "bi_endoscopy_procedure d",
+      "source_column_position": 35,
+      "source_header_original": "DurationG",
+      "staging_column_name": "DurationG",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_ENDOSCOPY_PROCEDURE",
+      "source_sheet": "bi_endoscopy_procedure d",
+      "source_column_position": 36,
+      "source_header_original": "idordered",
+      "staging_column_name": "idordered",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_MEDICATION",
+      "source_sheet": "bi_medication data",
+      "source_column_position": 1,
+      "source_header_original": "DeID",
+      "staging_column_name": "DeID",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_MEDICATION",
+      "source_sheet": "bi_medication data",
+      "source_column_position": 2,
+      "source_header_original": "VisitID",
+      "staging_column_name": "VisitID",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_MEDICATION",
+      "source_sheet": "bi_medication data",
+      "source_column_position": 3,
+      "source_header_original": "Patient_category",
+      "staging_column_name": "Patient_category",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_MEDICATION",
+      "source_sheet": "bi_medication data",
+      "source_column_position": 4,
+      "source_header_original": "Drug_code",
+      "staging_column_name": "Drug_code",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_MEDICATION",
+      "source_sheet": "bi_medication data",
+      "source_column_position": 5,
+      "source_header_original": "Drug_name",
+      "staging_column_name": "Drug_name",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_MEDICATION",
+      "source_sheet": "bi_medication data",
+      "source_column_position": 6,
+      "source_header_original": "Nursing1",
+      "staging_column_name": "Nursing1",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_MEDICATION",
+      "source_sheet": "bi_medication data",
+      "source_column_position": 7,
+      "source_header_original": "Nursing2",
+      "staging_column_name": "Nursing2",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_MEDICATION",
+      "source_sheet": "bi_medication data",
+      "source_column_position": 8,
+      "source_header_original": "Nursing3",
+      "staging_column_name": "Nursing3",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_MEDICATION",
+      "source_sheet": "bi_medication data",
+      "source_column_position": 9,
+      "source_header_original": "Nursing4",
+      "staging_column_name": "Nursing4",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_MEDICATION",
+      "source_sheet": "bi_medication data",
+      "source_column_position": 10,
+      "source_header_original": "Nursing5",
+      "staging_column_name": "Nursing5",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_MEDICATION",
+      "source_sheet": "bi_medication data",
+      "source_column_position": 11,
+      "source_header_original": "Pharmacy1",
+      "staging_column_name": "Pharmacy1",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_MEDICATION",
+      "source_sheet": "bi_medication data",
+      "source_column_position": 12,
+      "source_header_original": "Pharmacy2",
+      "staging_column_name": "Pharmacy2",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_MEDICATION",
+      "source_sheet": "bi_medication data",
+      "source_column_position": 13,
+      "source_header_original": "Pharmacy3",
+      "staging_column_name": "Pharmacy3",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_MEDICATION",
+      "source_sheet": "bi_medication data",
+      "source_column_position": 14,
+      "source_header_original": "Pharmacy4",
+      "staging_column_name": "Pharmacy4",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_MEDICATION",
+      "source_sheet": "bi_medication data",
+      "source_column_position": 15,
+      "source_header_original": "Pharmacy5",
+      "staging_column_name": "Pharmacy5",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_MEDICATION",
+      "source_sheet": "bi_medication data",
+      "source_column_position": 16,
+      "source_header_original": "Prescriber1",
+      "staging_column_name": "Prescriber1",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_MEDICATION",
+      "source_sheet": "bi_medication data",
+      "source_column_position": 17,
+      "source_header_original": "Prescriber2",
+      "staging_column_name": "Prescriber2",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_MEDICATION",
+      "source_sheet": "bi_medication data",
+      "source_column_position": 18,
+      "source_header_original": "Prescriber3",
+      "staging_column_name": "Prescriber3",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_MEDICATION",
+      "source_sheet": "bi_medication data",
+      "source_column_position": 19,
+      "source_header_original": "Prescriber4",
+      "staging_column_name": "Prescriber4",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_MEDICATION",
+      "source_sheet": "bi_medication data",
+      "source_column_position": 20,
+      "source_header_original": "Prescriber5",
+      "staging_column_name": "Prescriber5",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_MEDICATION",
+      "source_sheet": "bi_medication data",
+      "source_column_position": 21,
+      "source_header_original": "Prescription_datetime",
+      "staging_column_name": "Prescription_datetime",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_MEDICATION",
+      "source_sheet": "bi_medication data",
+      "source_column_position": 22,
+      "source_header_original": "Screen_datetime",
+      "staging_column_name": "Screen_datetime",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_MEDICATION",
+      "source_sheet": "bi_medication data",
+      "source_column_position": 23,
+      "source_header_original": "Dispense_datetime",
+      "staging_column_name": "Dispense_datetime",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_MEDICATION",
+      "source_sheet": "bi_medication data",
+      "source_column_position": 24,
+      "source_header_original": "Serving_datetime",
+      "staging_column_name": "Serving_datetime",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_MEDICATION",
+      "source_sheet": "bi_medication data",
+      "source_column_position": 25,
+      "source_header_original": "Stop_datetime",
+      "staging_column_name": "Stop_datetime",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_MEDICATION",
+      "source_sheet": "bi_medication data",
+      "source_column_position": 26,
+      "source_header_original": "DurationA",
+      "staging_column_name": "DurationA",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_MEDICATION",
+      "source_sheet": "bi_medication data",
+      "source_column_position": 27,
+      "source_header_original": "DurationB",
+      "staging_column_name": "DurationB",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_MEDICATION",
+      "source_sheet": "bi_medication data",
+      "source_column_position": 28,
+      "source_header_original": "DurationC",
+      "staging_column_name": "DurationC",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_MEDICATION",
+      "source_sheet": "bi_medication data",
+      "source_column_position": 29,
+      "source_header_original": "DurationD",
+      "staging_column_name": "DurationD",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_MEDICATION",
+      "source_sheet": "bi_medication data",
+      "source_column_position": 30,
+      "source_header_original": "Omission_reason",
+      "staging_column_name": "Omission_reason",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_MEDICATION",
+      "source_sheet": "bi_medication data",
+      "source_column_position": 31,
+      "source_header_original": "Dose",
+      "staging_column_name": "Dose",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_MEDICATION",
+      "source_sheet": "bi_medication data",
+      "source_column_position": 32,
+      "source_header_original": "Duration",
+      "staging_column_name": "Duration",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_MEDICATION",
+      "source_sheet": "bi_medication data",
+      "source_column_position": 33,
+      "source_header_original": "Method",
+      "staging_column_name": "Method",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_MEDICATION",
+      "source_sheet": "bi_medication data",
+      "source_column_position": 34,
+      "source_header_original": "Cost_per_unit",
+      "staging_column_name": "Cost_per_unit",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_MEDICATION",
+      "source_sheet": "bi_medication data",
+      "source_column_position": 35,
+      "source_header_original": "Total_cost",
+      "staging_column_name": "Total_cost",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_MEDICATION",
+      "source_sheet": "bi_medication data",
+      "source_column_position": 36,
+      "source_header_original": "idpreskripsi",
+      "staging_column_name": "idpreskripsi",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_NEUROLOGY_PROCEDURE",
+      "source_sheet": "bi_neurology_procedure d",
+      "source_column_position": 1,
+      "source_header_original": "DeID",
+      "staging_column_name": "DeID",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_NEUROLOGY_PROCEDURE",
+      "source_sheet": "bi_neurology_procedure d",
+      "source_column_position": 2,
+      "source_header_original": "VisitID",
+      "staging_column_name": "VisitID",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_NEUROLOGY_PROCEDURE",
+      "source_sheet": "bi_neurology_procedure d",
+      "source_column_position": 3,
+      "source_header_original": "Test_code",
+      "staging_column_name": "Test_code",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_NEUROLOGY_PROCEDURE",
+      "source_sheet": "bi_neurology_procedure d",
+      "source_column_position": 4,
+      "source_header_original": "Test_description",
+      "staging_column_name": "Test_description",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_NEUROLOGY_PROCEDURE",
+      "source_sheet": "bi_neurology_procedure d",
+      "source_column_position": 5,
+      "source_header_original": "Internal_code",
+      "staging_column_name": "Internal_code",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_NEUROLOGY_PROCEDURE",
+      "source_sheet": "bi_neurology_procedure d",
+      "source_column_position": 6,
+      "source_header_original": "Procedure_type",
+      "staging_column_name": "Procedure_type",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_NEUROLOGY_PROCEDURE",
+      "source_sheet": "bi_neurology_procedure d",
+      "source_column_position": 7,
+      "source_header_original": "Procedure_date",
+      "staging_column_name": "Procedure_date",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_NEUROLOGY_PROCEDURE",
+      "source_sheet": "bi_neurology_procedure d",
+      "source_column_position": 8,
+      "source_header_original": "Procedure_duration",
+      "staging_column_name": "Procedure_duration",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_NEUROLOGY_PROCEDURE",
+      "source_sheet": "bi_neurology_procedure d",
+      "source_column_position": 9,
+      "source_header_original": "Requester",
+      "staging_column_name": "Requester",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_NEUROLOGY_PROCEDURE",
+      "source_sheet": "bi_neurology_procedure d",
+      "source_column_position": 10,
+      "source_header_original": "Requester_specialty",
+      "staging_column_name": "Requester_specialty",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_NEUROLOGY_PROCEDURE",
+      "source_sheet": "bi_neurology_procedure d",
+      "source_column_position": 11,
+      "source_header_original": "MLT1",
+      "staging_column_name": "MLT1",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_NEUROLOGY_PROCEDURE",
+      "source_sheet": "bi_neurology_procedure d",
+      "source_column_position": 12,
+      "source_header_original": "MLT2",
+      "staging_column_name": "MLT2",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_NEUROLOGY_PROCEDURE",
+      "source_sheet": "bi_neurology_procedure d",
+      "source_column_position": 13,
+      "source_header_original": "MLT3",
+      "staging_column_name": "MLT3",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_NEUROLOGY_PROCEDURE",
+      "source_sheet": "bi_neurology_procedure d",
+      "source_column_position": 14,
+      "source_header_original": "MLT4",
+      "staging_column_name": "MLT4",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_NEUROLOGY_PROCEDURE",
+      "source_sheet": "bi_neurology_procedure d",
+      "source_column_position": 15,
+      "source_header_original": "MLT5",
+      "staging_column_name": "MLT5",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_NEUROLOGY_PROCEDURE",
+      "source_sheet": "bi_neurology_procedure d",
+      "source_column_position": 16,
+      "source_header_original": "Neurologist1",
+      "staging_column_name": "Neurologist1",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_NEUROLOGY_PROCEDURE",
+      "source_sheet": "bi_neurology_procedure d",
+      "source_column_position": 17,
+      "source_header_original": "Neurologist2",
+      "staging_column_name": "Neurologist2",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_NEUROLOGY_PROCEDURE",
+      "source_sheet": "bi_neurology_procedure d",
+      "source_column_position": 18,
+      "source_header_original": "Neurologist3",
+      "staging_column_name": "Neurologist3",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_NEUROLOGY_PROCEDURE",
+      "source_sheet": "bi_neurology_procedure d",
+      "source_column_position": 19,
+      "source_header_original": "Neurologist4",
+      "staging_column_name": "Neurologist4",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_NEUROLOGY_PROCEDURE",
+      "source_sheet": "bi_neurology_procedure d",
+      "source_column_position": 20,
+      "source_header_original": "Neurologist5",
+      "staging_column_name": "Neurologist5",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_NEUROLOGY_PROCEDURE",
+      "source_sheet": "bi_neurology_procedure d",
+      "source_column_position": 21,
+      "source_header_original": "Order_urgency",
+      "staging_column_name": "Order_urgency",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_NEUROLOGY_PROCEDURE",
+      "source_sheet": "bi_neurology_procedure d",
+      "source_column_position": 22,
+      "source_header_original": "Assisting_aids",
+      "staging_column_name": "Assisting_aids",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_NEUROLOGY_PROCEDURE",
+      "source_sheet": "bi_neurology_procedure d",
+      "source_column_position": 23,
+      "source_header_original": "Accession_number",
+      "staging_column_name": "Accession_number",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_NEUROLOGY_PROCEDURE",
+      "source_sheet": "bi_neurology_procedure d",
+      "source_column_position": 24,
+      "source_header_original": "Result_datetime",
+      "staging_column_name": "Result_datetime",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_NEUROLOGY_PROCEDURE",
+      "source_sheet": "bi_neurology_procedure d",
+      "source_column_position": 25,
+      "source_header_original": "Final_report",
+      "staging_column_name": "Final_report",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_NEUROLOGY_PROCEDURE",
+      "source_sheet": "bi_neurology_procedure d",
+      "source_column_position": 26,
+      "source_header_original": "Result_description",
+      "staging_column_name": "Result_description",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_NEUROLOGY_PROCEDURE",
+      "source_sheet": "bi_neurology_procedure d",
+      "source_column_position": 27,
+      "source_header_original": "Charges",
+      "staging_column_name": "Charges",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_NEUROLOGY_PROCEDURE",
+      "source_sheet": "bi_neurology_procedure d",
+      "source_column_position": 28,
+      "source_header_original": "Neurology_section",
+      "staging_column_name": "Neurology_section",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_NEUROLOGY_PROCEDURE",
+      "source_sheet": "bi_neurology_procedure d",
+      "source_column_position": 29,
+      "source_header_original": "Modality",
+      "staging_column_name": "Modality",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_NEUROLOGY_PROCEDURE",
+      "source_sheet": "bi_neurology_procedure d",
+      "source_column_position": 30,
+      "source_header_original": "DurationA",
+      "staging_column_name": "DurationA",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_NEUROLOGY_PROCEDURE",
+      "source_sheet": "bi_neurology_procedure d",
+      "source_column_position": 31,
+      "source_header_original": "DurationB",
+      "staging_column_name": "DurationB",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_NEUROLOGY_PROCEDURE",
+      "source_sheet": "bi_neurology_procedure d",
+      "source_column_position": 32,
+      "source_header_original": "DurationC",
+      "staging_column_name": "DurationC",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_NEUROLOGY_PROCEDURE",
+      "source_sheet": "bi_neurology_procedure d",
+      "source_column_position": 33,
+      "source_header_original": "DurationD",
+      "staging_column_name": "DurationD",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_NEUROLOGY_PROCEDURE",
+      "source_sheet": "bi_neurology_procedure d",
+      "source_column_position": 34,
+      "source_header_original": "DurationE",
+      "staging_column_name": "DurationE",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_NEUROLOGY_PROCEDURE",
+      "source_sheet": "bi_neurology_procedure d",
+      "source_column_position": 35,
+      "source_header_original": "DurationF",
+      "staging_column_name": "DurationF",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_NEUROLOGY_PROCEDURE",
+      "source_sheet": "bi_neurology_procedure d",
+      "source_column_position": 36,
+      "source_header_original": "DurationG",
+      "staging_column_name": "DurationG",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_NEUROLOGY_PROCEDURE",
+      "source_sheet": "bi_neurology_procedure d",
+      "source_column_position": 37,
+      "source_header_original": "idornneurology",
+      "staging_column_name": "idornneurology",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_OPERATION_PROCEDURE",
+      "source_sheet": "bi_operation_procedure sample d",
+      "source_column_position": 1,
+      "source_header_original": "DeID",
+      "staging_column_name": "DeID",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_OPERATION_PROCEDURE",
+      "source_sheet": "bi_operation_procedure sample d",
+      "source_column_position": 2,
+      "source_header_original": "VisitID",
+      "staging_column_name": "VisitID",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_OPERATION_PROCEDURE",
+      "source_sheet": "bi_operation_procedure sample d",
+      "source_column_position": 3,
+      "source_header_original": "Surgery_date",
+      "staging_column_name": "Surgery_date",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_OPERATION_PROCEDURE",
+      "source_sheet": "bi_operation_procedure sample d",
+      "source_column_position": 4,
+      "source_header_original": "OT_location",
+      "staging_column_name": "OT_location",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_OPERATION_PROCEDURE",
+      "source_sheet": "bi_operation_procedure sample d",
+      "source_column_position": 5,
+      "source_header_original": "Theater_room",
+      "staging_column_name": "Theater_room",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_OPERATION_PROCEDURE",
+      "source_sheet": "bi_operation_procedure sample d",
+      "source_column_position": 6,
+      "source_header_original": "Booking_ID",
+      "staging_column_name": "Booking_ID",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_OPERATION_PROCEDURE",
+      "source_sheet": "bi_operation_procedure sample d",
+      "source_column_position": 7,
+      "source_header_original": "Operation_status",
+      "staging_column_name": "Operation_status",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_OPERATION_PROCEDURE",
+      "source_sheet": "bi_operation_procedure sample d",
+      "source_column_position": 8,
+      "source_header_original": "Surgery_type",
+      "staging_column_name": "Surgery_type",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_OPERATION_PROCEDURE",
+      "source_sheet": "bi_operation_procedure sample d",
+      "source_column_position": 9,
+      "source_header_original": "Diagnosis_code1",
+      "staging_column_name": "Diagnosis_code1",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_OPERATION_PROCEDURE",
+      "source_sheet": "bi_operation_procedure sample d",
+      "source_column_position": 10,
+      "source_header_original": "Diagnosis_code2",
+      "staging_column_name": "Diagnosis_code2",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_OPERATION_PROCEDURE",
+      "source_sheet": "bi_operation_procedure sample d",
+      "source_column_position": 11,
+      "source_header_original": "Diagnosis_code3",
+      "staging_column_name": "Diagnosis_code3",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_OPERATION_PROCEDURE",
+      "source_sheet": "bi_operation_procedure sample d",
+      "source_column_position": 12,
+      "source_header_original": "Diagnosis_code4",
+      "staging_column_name": "Diagnosis_code4",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_OPERATION_PROCEDURE",
+      "source_sheet": "bi_operation_procedure sample d",
+      "source_column_position": 13,
+      "source_header_original": "Diagnosis_code5",
+      "staging_column_name": "Diagnosis_code5",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_OPERATION_PROCEDURE",
+      "source_sheet": "bi_operation_procedure sample d",
+      "source_column_position": 14,
+      "source_header_original": "Procedure_code1",
+      "staging_column_name": "Procedure_code1",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_OPERATION_PROCEDURE",
+      "source_sheet": "bi_operation_procedure sample d",
+      "source_column_position": 15,
+      "source_header_original": "Procedure_code2",
+      "staging_column_name": "Procedure_code2",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_OPERATION_PROCEDURE",
+      "source_sheet": "bi_operation_procedure sample d",
+      "source_column_position": 16,
+      "source_header_original": "Procedure_code3",
+      "staging_column_name": "Procedure_code3",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_OPERATION_PROCEDURE",
+      "source_sheet": "bi_operation_procedure sample d",
+      "source_column_position": 17,
+      "source_header_original": "Procedure_code4",
+      "staging_column_name": "Procedure_code4",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_OPERATION_PROCEDURE",
+      "source_sheet": "bi_operation_procedure sample d",
+      "source_column_position": 18,
+      "source_header_original": "Procedure_code5",
+      "staging_column_name": "Procedure_code5",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_OPERATION_PROCEDURE",
+      "source_sheet": "bi_operation_procedure sample d",
+      "source_column_position": 19,
+      "source_header_original": "Description1",
+      "staging_column_name": "Description1",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_OPERATION_PROCEDURE",
+      "source_sheet": "bi_operation_procedure sample d",
+      "source_column_position": 20,
+      "source_header_original": "Description2",
+      "staging_column_name": "Description2",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_OPERATION_PROCEDURE",
+      "source_sheet": "bi_operation_procedure sample d",
+      "source_column_position": 21,
+      "source_header_original": "Description3",
+      "staging_column_name": "Description3",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_OPERATION_PROCEDURE",
+      "source_sheet": "bi_operation_procedure sample d",
+      "source_column_position": 22,
+      "source_header_original": "Description4",
+      "staging_column_name": "Description4",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_OPERATION_PROCEDURE",
+      "source_sheet": "bi_operation_procedure sample d",
+      "source_column_position": 23,
+      "source_header_original": "Description5",
+      "staging_column_name": "Description5",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_OPERATION_PROCEDURE",
+      "source_sheet": "bi_operation_procedure sample d",
+      "source_column_position": 24,
+      "source_header_original": "Internal_code1",
+      "staging_column_name": "Internal_code1",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_OPERATION_PROCEDURE",
+      "source_sheet": "bi_operation_procedure sample d",
+      "source_column_position": 25,
+      "source_header_original": "Internal_code2",
+      "staging_column_name": "Internal_code2",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_OPERATION_PROCEDURE",
+      "source_sheet": "bi_operation_procedure sample d",
+      "source_column_position": 26,
+      "source_header_original": "Internal_code3",
+      "staging_column_name": "Internal_code3",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_OPERATION_PROCEDURE",
+      "source_sheet": "bi_operation_procedure sample d",
+      "source_column_position": 27,
+      "source_header_original": "Internal_code4",
+      "staging_column_name": "Internal_code4",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_OPERATION_PROCEDURE",
+      "source_sheet": "bi_operation_procedure sample d",
+      "source_column_position": 28,
+      "source_header_original": "Internal_code5",
+      "staging_column_name": "Internal_code5",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_OPERATION_PROCEDURE",
+      "source_sheet": "bi_operation_procedure sample d",
+      "source_column_position": 29,
+      "source_header_original": "Surgeon1",
+      "staging_column_name": "Surgeon1",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_OPERATION_PROCEDURE",
+      "source_sheet": "bi_operation_procedure sample d",
+      "source_column_position": 30,
+      "source_header_original": "Surgeon2",
+      "staging_column_name": "Surgeon2",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_OPERATION_PROCEDURE",
+      "source_sheet": "bi_operation_procedure sample d",
+      "source_column_position": 31,
+      "source_header_original": "Surgeon3",
+      "staging_column_name": "Surgeon3",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_OPERATION_PROCEDURE",
+      "source_sheet": "bi_operation_procedure sample d",
+      "source_column_position": 32,
+      "source_header_original": "Surgeon4",
+      "staging_column_name": "Surgeon4",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_OPERATION_PROCEDURE",
+      "source_sheet": "bi_operation_procedure sample d",
+      "source_column_position": 33,
+      "source_header_original": "Surgeon5",
+      "staging_column_name": "Surgeon5",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_OPERATION_PROCEDURE",
+      "source_sheet": "bi_operation_procedure sample d",
+      "source_column_position": 34,
+      "source_header_original": "anaesthetist1",
+      "staging_column_name": "anaesthetist1",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_OPERATION_PROCEDURE",
+      "source_sheet": "bi_operation_procedure sample d",
+      "source_column_position": 35,
+      "source_header_original": "anaesthetist2",
+      "staging_column_name": "anaesthetist2",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_OPERATION_PROCEDURE",
+      "source_sheet": "bi_operation_procedure sample d",
+      "source_column_position": 36,
+      "source_header_original": "anaesthetist3",
+      "staging_column_name": "anaesthetist3",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_OPERATION_PROCEDURE",
+      "source_sheet": "bi_operation_procedure sample d",
+      "source_column_position": 37,
+      "source_header_original": "anaesthetist4",
+      "staging_column_name": "anaesthetist4",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_OPERATION_PROCEDURE",
+      "source_sheet": "bi_operation_procedure sample d",
+      "source_column_position": 38,
+      "source_header_original": "anaesthetist5",
+      "staging_column_name": "anaesthetist5",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_OPERATION_PROCEDURE",
+      "source_sheet": "bi_operation_procedure sample d",
+      "source_column_position": 39,
+      "source_header_original": "Nurse1",
+      "staging_column_name": "Nurse1",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_OPERATION_PROCEDURE",
+      "source_sheet": "bi_operation_procedure sample d",
+      "source_column_position": 40,
+      "source_header_original": "Nurse2",
+      "staging_column_name": "Nurse2",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_OPERATION_PROCEDURE",
+      "source_sheet": "bi_operation_procedure sample d",
+      "source_column_position": 41,
+      "source_header_original": "Nurse3",
+      "staging_column_name": "Nurse3",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_OPERATION_PROCEDURE",
+      "source_sheet": "bi_operation_procedure sample d",
+      "source_column_position": 42,
+      "source_header_original": "Nurse4",
+      "staging_column_name": "Nurse4",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_OPERATION_PROCEDURE",
+      "source_sheet": "bi_operation_procedure sample d",
+      "source_column_position": 43,
+      "source_header_original": "Nurse5",
+      "staging_column_name": "Nurse5",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_OPERATION_PROCEDURE",
+      "source_sheet": "bi_operation_procedure sample d",
+      "source_column_position": 44,
+      "source_header_original": "Specialty",
+      "staging_column_name": "Specialty",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_OPERATION_PROCEDURE",
+      "source_sheet": "bi_operation_procedure sample d",
+      "source_column_position": 45,
+      "source_header_original": "Sub-specialty",
+      "staging_column_name": "Sub-specialty",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_OPERATION_PROCEDURE",
+      "source_sheet": "bi_operation_procedure sample d",
+      "source_column_position": 46,
+      "source_header_original": "Start_datetime",
+      "staging_column_name": "Start_datetime",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_OPERATION_PROCEDURE",
+      "source_sheet": "bi_operation_procedure sample d",
+      "source_column_position": 47,
+      "source_header_original": "End_datetime",
+      "staging_column_name": "End_datetime",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_OPERATION_PROCEDURE",
+      "source_sheet": "bi_operation_procedure sample d",
+      "source_column_position": 48,
+      "source_header_original": "Surgery_duration",
+      "staging_column_name": "Surgery_duration",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_OPERATION_PROCEDURE",
+      "source_sheet": "bi_operation_procedure sample d",
+      "source_column_position": 49,
+      "source_header_original": "PACU_transfer",
+      "staging_column_name": "PACU_transfer",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_OPERATION_PROCEDURE",
+      "source_sheet": "bi_operation_procedure sample d",
+      "source_column_position": 50,
+      "source_header_original": "PACU_discharge",
+      "staging_column_name": "PACU_discharge",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_OPERATION_PROCEDURE",
+      "source_sheet": "bi_operation_procedure sample d",
+      "source_column_position": 51,
+      "source_header_original": "Return_to_ward",
+      "staging_column_name": "Return_to_ward",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_OPERATION_PROCEDURE",
+      "source_sheet": "bi_operation_procedure sample d",
+      "source_column_position": 52,
+      "source_header_original": "qc",
+      "staging_column_name": "qc",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_OPERATION_PROCEDURE",
+      "source_sheet": "bi_operation_procedure sample d",
+      "source_column_position": 53,
+      "source_header_original": "qc_RN",
+      "staging_column_name": "qc_RN",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_OPERATION_PROCEDURE",
+      "source_sheet": "bi_operation_procedure sample d",
+      "source_column_position": 54,
+      "source_header_original": "bi_patient",
+      "staging_column_name": "bi_patient",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_OPERATION_PROCEDURE",
+      "source_sheet": "bi_operation_procedure sample d",
+      "source_column_position": 55,
+      "source_header_original": "QC_diagnosis",
+      "staging_column_name": "QC_diagnosis",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_OPERATION_PROCEDURE",
+      "source_sheet": "bi_operation_procedure sample d",
+      "source_column_position": 56,
+      "source_header_original": "qc_procedure",
+      "staging_column_name": "qc_procedure",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_RADIOLOGY_PROCEDURE",
+      "source_sheet": "bi_radiology_procedure d",
+      "source_column_position": 1,
+      "source_header_original": "DeID",
+      "staging_column_name": "DeID",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_RADIOLOGY_PROCEDURE",
+      "source_sheet": "bi_radiology_procedure d",
+      "source_column_position": 2,
+      "source_header_original": "VisitID",
+      "staging_column_name": "VisitID",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_RADIOLOGY_PROCEDURE",
+      "source_sheet": "bi_radiology_procedure d",
+      "source_column_position": 3,
+      "source_header_original": "Test_code",
+      "staging_column_name": "Test_code",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_RADIOLOGY_PROCEDURE",
+      "source_sheet": "bi_radiology_procedure d",
+      "source_column_position": 4,
+      "source_header_original": "Test_description",
+      "staging_column_name": "Test_description",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_RADIOLOGY_PROCEDURE",
+      "source_sheet": "bi_radiology_procedure d",
+      "source_column_position": 5,
+      "source_header_original": "Internal_code",
+      "staging_column_name": "Internal_code",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_RADIOLOGY_PROCEDURE",
+      "source_sheet": "bi_radiology_procedure d",
+      "source_column_position": 6,
+      "source_header_original": "Requester",
+      "staging_column_name": "Requester",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_RADIOLOGY_PROCEDURE",
+      "source_sheet": "bi_radiology_procedure d",
+      "source_column_position": 7,
+      "source_header_original": "Requester_specialty",
+      "staging_column_name": "Requester_specialty",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_RADIOLOGY_PROCEDURE",
+      "source_sheet": "bi_radiology_procedure d",
+      "source_column_position": 8,
+      "source_header_original": "MLT1",
+      "staging_column_name": "MLT1",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_RADIOLOGY_PROCEDURE",
+      "source_sheet": "bi_radiology_procedure d",
+      "source_column_position": 9,
+      "source_header_original": "MLT2",
+      "staging_column_name": "MLT2",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_RADIOLOGY_PROCEDURE",
+      "source_sheet": "bi_radiology_procedure d",
+      "source_column_position": 10,
+      "source_header_original": "MLT3",
+      "staging_column_name": "MLT3",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_RADIOLOGY_PROCEDURE",
+      "source_sheet": "bi_radiology_procedure d",
+      "source_column_position": 11,
+      "source_header_original": "MLT4",
+      "staging_column_name": "MLT4",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_RADIOLOGY_PROCEDURE",
+      "source_sheet": "bi_radiology_procedure d",
+      "source_column_position": 12,
+      "source_header_original": "MLT5",
+      "staging_column_name": "MLT5",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_RADIOLOGY_PROCEDURE",
+      "source_sheet": "bi_radiology_procedure d",
+      "source_column_position": 13,
+      "source_header_original": "Radiologist1",
+      "staging_column_name": "Radiologist1",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_RADIOLOGY_PROCEDURE",
+      "source_sheet": "bi_radiology_procedure d",
+      "source_column_position": 14,
+      "source_header_original": "Radiologist2",
+      "staging_column_name": "Radiologist2",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_RADIOLOGY_PROCEDURE",
+      "source_sheet": "bi_radiology_procedure d",
+      "source_column_position": 15,
+      "source_header_original": "Radiologist3",
+      "staging_column_name": "Radiologist3",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_RADIOLOGY_PROCEDURE",
+      "source_sheet": "bi_radiology_procedure d",
+      "source_column_position": 16,
+      "source_header_original": "Radiologist4",
+      "staging_column_name": "Radiologist4",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_RADIOLOGY_PROCEDURE",
+      "source_sheet": "bi_radiology_procedure d",
+      "source_column_position": 17,
+      "source_header_original": "Radiologist5",
+      "staging_column_name": "Radiologist5",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_RADIOLOGY_PROCEDURE",
+      "source_sheet": "bi_radiology_procedure d",
+      "source_column_position": 18,
+      "source_header_original": "Order_urgency",
+      "staging_column_name": "Order_urgency",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_RADIOLOGY_PROCEDURE",
+      "source_sheet": "bi_radiology_procedure d",
+      "source_column_position": 19,
+      "source_header_original": "Assisting_aids",
+      "staging_column_name": "Assisting_aids",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_RADIOLOGY_PROCEDURE",
+      "source_sheet": "bi_radiology_procedure d",
+      "source_column_position": 20,
+      "source_header_original": "Accession_number",
+      "staging_column_name": "Accession_number",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_RADIOLOGY_PROCEDURE",
+      "source_sheet": "bi_radiology_procedure d",
+      "source_column_position": 21,
+      "source_header_original": "Charges",
+      "staging_column_name": "Charges",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_RADIOLOGY_PROCEDURE",
+      "source_sheet": "bi_radiology_procedure d",
+      "source_column_position": 22,
+      "source_header_original": "Final_report",
+      "staging_column_name": "Final_report",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_RADIOLOGY_PROCEDURE",
+      "source_sheet": "bi_radiology_procedure d",
+      "source_column_position": 23,
+      "source_header_original": "Biomedical_section",
+      "staging_column_name": "Biomedical_section",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_RADIOLOGY_PROCEDURE",
+      "source_sheet": "bi_radiology_procedure d",
+      "source_column_position": 24,
+      "source_header_original": "Modality",
+      "staging_column_name": "Modality",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_RADIOLOGY_PROCEDURE",
+      "source_sheet": "bi_radiology_procedure d",
+      "source_column_position": 25,
+      "source_header_original": "DurationA",
+      "staging_column_name": "DurationA",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_RADIOLOGY_PROCEDURE",
+      "source_sheet": "bi_radiology_procedure d",
+      "source_column_position": 26,
+      "source_header_original": "DurationB",
+      "staging_column_name": "DurationB",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_RADIOLOGY_PROCEDURE",
+      "source_sheet": "bi_radiology_procedure d",
+      "source_column_position": 27,
+      "source_header_original": "DurationC",
+      "staging_column_name": "DurationC",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_RADIOLOGY_PROCEDURE",
+      "source_sheet": "bi_radiology_procedure d",
+      "source_column_position": 28,
+      "source_header_original": "DurationD",
+      "staging_column_name": "DurationD",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_RADIOLOGY_PROCEDURE",
+      "source_sheet": "bi_radiology_procedure d",
+      "source_column_position": 29,
+      "source_header_original": "DurationE",
+      "staging_column_name": "DurationE",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_RADIOLOGY_PROCEDURE",
+      "source_sheet": "bi_radiology_procedure d",
+      "source_column_position": 30,
+      "source_header_original": "DurationF",
+      "staging_column_name": "DurationF",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_RADIOLOGY_PROCEDURE",
+      "source_sheet": "bi_radiology_procedure d",
+      "source_column_position": 31,
+      "source_header_original": "DurationG",
+      "staging_column_name": "DurationG",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_RADIOLOGY_PROCEDURE",
+      "source_sheet": "bi_radiology_procedure d",
+      "source_column_position": 32,
+      "source_header_original": "idorrimagingrequested",
+      "staging_column_name": "idorrimagingrequested",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_RADIOLOGY_PROCEDURE",
+      "source_sheet": "bi_radiology_procedure d",
+      "source_column_position": 33,
+      "source_header_original": "requestdate",
+      "staging_column_name": "requestdate",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_RADIOLOGY_PROCEDURE",
+      "source_sheet": "bi_radiology_procedure d",
+      "source_column_position": 34,
+      "source_header_original": "appointmentdate",
+      "staging_column_name": "appointmentdate",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_RADIOLOGY_PROCEDURE",
+      "source_sheet": "bi_radiology_procedure d",
+      "source_column_position": 35,
+      "source_header_original": "arrivaldate",
+      "staging_column_name": "arrivaldate",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_RADIOLOGY_PROCEDURE",
+      "source_sheet": "bi_radiology_procedure d",
+      "source_column_position": 36,
+      "source_header_original": "preliminaryreportdate",
+      "staging_column_name": "preliminaryreportdate",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_RADIOLOGY_PROCEDURE",
+      "source_sheet": "bi_radiology_procedure d",
+      "source_column_position": 37,
+      "source_header_original": "examinationdate",
+      "staging_column_name": "examinationdate",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_RADIOLOGY_PROCEDURE",
+      "source_sheet": "bi_radiology_procedure d",
+      "source_column_position": 38,
+      "source_header_original": "finalreportdate",
+      "staging_column_name": "finalreportdate",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_RADIOLOGY_PROCEDURE",
+      "source_sheet": "bi_radiology_procedure d",
+      "source_column_position": 39,
+      "source_header_original": null,
+      "staging_column_name": "__source_column_039",
+      "blank_header_mapped": true
+    },
+    {
+      "dataset_id": "DS_LABORATORY_PROCEDURE",
+      "source_sheet": "bi_laboratory_procedure ",
+      "source_column_position": 1,
+      "source_header_original": "DeID",
+      "staging_column_name": "DeID",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_LABORATORY_PROCEDURE",
+      "source_sheet": "bi_laboratory_procedure ",
+      "source_column_position": 2,
+      "source_header_original": "VisitID",
+      "staging_column_name": "VisitID",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_LABORATORY_PROCEDURE",
+      "source_sheet": "bi_laboratory_procedure ",
+      "source_column_position": 3,
+      "source_header_original": "Sample_type",
+      "staging_column_name": "Sample_type",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_LABORATORY_PROCEDURE",
+      "source_sheet": "bi_laboratory_procedure ",
+      "source_column_position": 4,
+      "source_header_original": "Sampling_datetime",
+      "staging_column_name": "Sampling_datetime",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_LABORATORY_PROCEDURE",
+      "source_sheet": "bi_laboratory_procedure ",
+      "source_column_position": 5,
+      "source_header_original": "Reception_datetime",
+      "staging_column_name": "Reception_datetime",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_LABORATORY_PROCEDURE",
+      "source_sheet": "bi_laboratory_procedure ",
+      "source_column_position": 6,
+      "source_header_original": "Lab_location",
+      "staging_column_name": "Lab_location",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_LABORATORY_PROCEDURE",
+      "source_sheet": "bi_laboratory_procedure ",
+      "source_column_position": 7,
+      "source_header_original": "Lab_section",
+      "staging_column_name": "Lab_section",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_LABORATORY_PROCEDURE",
+      "source_sheet": "bi_laboratory_procedure ",
+      "source_column_position": 8,
+      "source_header_original": "Test_code",
+      "staging_column_name": "Test_code",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_LABORATORY_PROCEDURE",
+      "source_sheet": "bi_laboratory_procedure ",
+      "source_column_position": 9,
+      "source_header_original": "Previous_test",
+      "staging_column_name": "Previous_test",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_LABORATORY_PROCEDURE",
+      "source_sheet": "bi_laboratory_procedure ",
+      "source_column_position": 10,
+      "source_header_original": "Requesterid",
+      "staging_column_name": "Requesterid",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_LABORATORY_PROCEDURE",
+      "source_sheet": "bi_laboratory_procedure ",
+      "source_column_position": 11,
+      "source_header_original": "Requester",
+      "staging_column_name": "Requester",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_LABORATORY_PROCEDURE",
+      "source_sheet": "bi_laboratory_procedure ",
+      "source_column_position": 12,
+      "source_header_original": "Requester_specialty",
+      "staging_column_name": "Requester_specialty",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_LABORATORY_PROCEDURE",
+      "source_sheet": "bi_laboratory_procedure ",
+      "source_column_position": 13,
+      "source_header_original": "Order_urgency",
+      "staging_column_name": "Order_urgency",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_LABORATORY_PROCEDURE",
+      "source_sheet": "bi_laboratory_procedure ",
+      "source_column_position": 14,
+      "source_header_original": "Result_datetime",
+      "staging_column_name": "Result_datetime",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_LABORATORY_PROCEDURE",
+      "source_sheet": "bi_laboratory_procedure ",
+      "source_column_position": 15,
+      "source_header_original": "DurationA",
+      "staging_column_name": "DurationA",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_LABORATORY_PROCEDURE",
+      "source_sheet": "bi_laboratory_procedure ",
+      "source_column_position": 16,
+      "source_header_original": "DurationB",
+      "staging_column_name": "DurationB",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_LABORATORY_PROCEDURE",
+      "source_sheet": "bi_laboratory_procedure ",
+      "source_column_position": 17,
+      "source_header_original": "DurationC",
+      "staging_column_name": "DurationC",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_LABORATORY_PROCEDURE",
+      "source_sheet": "bi_laboratory_procedure ",
+      "source_column_position": 18,
+      "source_header_original": "Results",
+      "staging_column_name": "Results",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_LABORATORY_PROCEDURE",
+      "source_sheet": "bi_laboratory_procedure ",
+      "source_column_position": 19,
+      "source_header_original": "Range",
+      "staging_column_name": "Range",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_LABORATORY_PROCEDURE",
+      "source_sheet": "bi_laboratory_procedure ",
+      "source_column_position": 20,
+      "source_header_original": "Level",
+      "staging_column_name": "Level",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_LABORATORY_PROCEDURE",
+      "source_sheet": "bi_laboratory_procedure ",
+      "source_column_position": 21,
+      "source_header_original": "idorulabresult",
+      "staging_column_name": "idorulabresult",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_VITAL_SIGNS",
+      "source_sheet": "vitalsign data",
+      "source_column_position": 1,
+      "source_header_original": "IDVitalSign",
+      "staging_column_name": "IDVitalSign",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_VITAL_SIGNS",
+      "source_sheet": "vitalsign data",
+      "source_column_position": 2,
+      "source_header_original": "DeID",
+      "staging_column_name": "DeID",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_VITAL_SIGNS",
+      "source_sheet": "vitalsign data",
+      "source_column_position": 3,
+      "source_header_original": "VisitID",
+      "staging_column_name": "VisitID",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_VITAL_SIGNS",
+      "source_sheet": "vitalsign data",
+      "source_column_position": 4,
+      "source_header_original": "TarikhAmbil",
+      "staging_column_name": "TarikhAmbil",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_VITAL_SIGNS",
+      "source_sheet": "vitalsign data",
+      "source_column_position": 5,
+      "source_header_original": "IsDeleted",
+      "staging_column_name": "IsDeleted",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_VITAL_SIGNS",
+      "source_sheet": "vitalsign data",
+      "source_column_position": 6,
+      "source_header_original": "DateCreated",
+      "staging_column_name": "DateCreated",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_VITAL_SIGNS",
+      "source_sheet": "vitalsign data",
+      "source_column_position": 7,
+      "source_header_original": "CreatedBy",
+      "staging_column_name": "CreatedBy",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_VITAL_SIGNS",
+      "source_sheet": "vitalsign data",
+      "source_column_position": 8,
+      "source_header_original": "LastUpdate",
+      "staging_column_name": "LastUpdate",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_VITAL_SIGNS",
+      "source_sheet": "vitalsign data",
+      "source_column_position": 9,
+      "source_header_original": "LastUpdateBy",
+      "staging_column_name": "LastUpdateBy",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_VITAL_SIGNS",
+      "source_sheet": "vitalsign data",
+      "source_column_position": 10,
+      "source_header_original": "StatusProses",
+      "staging_column_name": "StatusProses",
+      "blank_header_mapped": false
+    },
+    {
+      "dataset_id": "DS_VITAL_SIGNS",
+      "source_sheet": "vitalsign data",
+      "source_column_position": 11,
+      "source_header_original": "idpesakitasal",
+      "staging_column_name": "idpesakitasal",
+      "blank_header_mapped": false
+    }
+  ],
+  "datasets": [
+    {
+      "dataset_id": "DS_PATIENT",
+      "display_label": "Patient Demographics",
+      "source_sheet": "bi_patient data",
+      "staging_table": "stg_ds_patient",
+      "rows_loaded": 100,
+      "columns_loaded": 30,
+      "all_blank_columns_retained": []
+    },
+    {
+      "dataset_id": "DS_VISIT",
+      "display_label": "Visits",
+      "source_sheet": "bi_visit data",
+      "staging_table": "stg_ds_visit",
+      "rows_loaded": 100,
+      "columns_loaded": 26,
+      "all_blank_columns_retained": []
+    },
+    {
+      "dataset_id": "DS_DIAGNOSIS",
+      "display_label": "Diagnoses",
+      "source_sheet": "bi_diagnosis data",
+      "staging_table": "stg_ds_diagnosis",
+      "rows_loaded": 100,
+      "columns_loaded": 18,
+      "all_blank_columns_retained": []
+    },
+    {
+      "dataset_id": "DS_ENDOSCOPY_PROCEDURE",
+      "display_label": "Endoscopy Procedures",
+      "source_sheet": "bi_endoscopy_procedure d",
+      "staging_table": "stg_ds_endoscopy_procedure",
+      "rows_loaded": 100,
+      "columns_loaded": 36,
+      "all_blank_columns_retained": []
+    },
+    {
+      "dataset_id": "DS_MEDICATION",
+      "display_label": "Medications",
+      "source_sheet": "bi_medication data",
+      "staging_table": "stg_ds_medication",
+      "rows_loaded": 100,
+      "columns_loaded": 36,
+      "all_blank_columns_retained": []
+    },
+    {
+      "dataset_id": "DS_NEUROLOGY_PROCEDURE",
+      "display_label": "Neurology Procedures",
+      "source_sheet": "bi_neurology_procedure d",
+      "staging_table": "stg_ds_neurology_procedure",
+      "rows_loaded": 100,
+      "columns_loaded": 37,
+      "all_blank_columns_retained": []
+    },
+    {
+      "dataset_id": "DS_OPERATION_PROCEDURE",
+      "display_label": "Operation Procedures",
+      "source_sheet": "bi_operation_procedure sample d",
+      "staging_table": "stg_ds_operation_procedure",
+      "rows_loaded": 100,
+      "columns_loaded": 56,
+      "all_blank_columns_retained": []
+    },
+    {
+      "dataset_id": "DS_RADIOLOGY_PROCEDURE",
+      "display_label": "Radiology Procedures",
+      "source_sheet": "bi_radiology_procedure d",
+      "staging_table": "stg_ds_radiology_procedure",
+      "rows_loaded": 100,
+      "columns_loaded": 39,
+      "all_blank_columns_retained": []
+    },
+    {
+      "dataset_id": "DS_LABORATORY_PROCEDURE",
+      "display_label": "Laboratory Procedures",
+      "source_sheet": "bi_laboratory_procedure ",
+      "staging_table": "stg_ds_laboratory_procedure",
+      "rows_loaded": 100,
+      "columns_loaded": 21,
+      "all_blank_columns_retained": []
+    },
+    {
+      "dataset_id": "DS_VITAL_SIGNS",
+      "display_label": "Vital Signs",
+      "source_sheet": "vitalsign data",
+      "staging_table": "stg_ds_vital_signs",
+      "rows_loaded": 100,
+      "columns_loaded": 11,
+      "all_blank_columns_retained": []
+    }
+  ],
+  "notes": [
+    "Staging values are stored as LONGTEXT; date and semantic typing are not inferred in this step.",
+    "No primary-key or foreign-key constraints were imposed.",
+    "Blank source headers are mapped to __source_column_NNN and the original header/position is recorded.",
+    "No source columns or records were intentionally dropped."
+  ]
+}

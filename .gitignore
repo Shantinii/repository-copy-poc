@@ -36,3 +36,20 @@ data/
 Thumbs.db
 *.jsonl
 backups/
+
+# IDE and development settings
+.vscode/
+.idea/
+
+# Python testing and lint caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Local POC runtime
+.poc_runtime/
+
+# Backup and temporary files
+*.bak
+*.backup
+*.swp
