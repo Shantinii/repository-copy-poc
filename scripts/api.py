@@ -3,8 +3,8 @@
 Run from the repository root with:
     uvicorn scripts.api:app --host 127.0.0.1 --port 8090
 
-Payment verification is deliberately fail-closed until a trusted payment
-provider/backend verifier is connected in get_verified_payment_status().
+Local POC testing may use ALLOW_MOCK_PAYMENT=true. This simulates payment
+success only; trusted payment verification is still required for live use.
 """
 from __future__ import annotations
 
@@ -87,14 +87,18 @@ def get_verified_payment_status(
     project_id: str,
     dataset_ids: list[str],
 ) -> str:
-    """Return payment status from a trusted provider/backend integration.
+    """Return a mock success only when local POC testing is explicitly enabled.
 
-    Replace this function body with the payment provider's authenticated
-    server-to-server lookup. It must verify that payment_id belongs to this
-    project and covers the requested datasets, then return the provider's
-    authoritative status (for example, "succeeded"). Never read payment
-    status from the request body or trust a browser-supplied success flag.
+    ALLOW_MOCK_PAYMENT=true is for local POC testing only. It does not verify
+    a real transaction and must remain false or unset outside local testing.
+    A trusted server-to-server payment verifier is still required for live use.
     """
+    env = dotenv_values(ROOT_ENV)
+    allow_mock_payment = str(env.get("ALLOW_MOCK_PAYMENT", "")).strip().lower() == "true"
+
+    if allow_mock_payment:
+        return "succeeded"
+
     raise PaymentVerificationUnavailable(
         "Trusted payment verification is not configured; copy request blocked"
     )
@@ -188,6 +192,18 @@ def copy_repository(
     except Exception as exc:
         raise HTTPException(status_code=403, detail="Project or dataset authorization failed") from exc
 
+    env = dotenv_values(ROOT_ENV)
+    database_host = env.get("DB_HOST", "127.0.0.1")
+    try:
+        database_port = int(env.get("DB_PORT", "3308"))
+    except (TypeError, ValueError) as exc:
+        raise HTTPException(status_code=503, detail="Database port configuration is invalid") from exc
+    if not database_host or not 1 <= database_port <= 65535:
+        raise HTTPException(
+            status_code=503,
+            detail="Database host or port configuration is invalid",
+        )
+
     # Existing engine performs cohort approval, locking, idempotency, SQL copy,
     # row-count validation, and failure cleanup.
     result = clinical_copy.run_dynamic_copy_job(
@@ -197,15 +213,6 @@ def copy_repository(
     )
     if result != 0:
         raise HTTPException(status_code=409, detail="Copy job did not complete")
-
-    env = dotenv_values(ROOT_ENV)
-    database_host = env.get("DB_HOST", "127.0.0.1")
-    try:
-        database_port = int(env.get("DB_PORT", "3308"))
-    except (TypeError, ValueError) as exc:
-        raise HTTPException(status_code=503, detail="Database port configuration is invalid") from exc
-    if not database_host or database_port != 3308:
-        raise HTTPException(status_code=503, detail="Database connection details are not configured for the local POC")
 
     available_tables = [
         clinical_copy.DATASET_REGISTRY[dataset_id]["source_table"]

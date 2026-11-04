@@ -58,3 +58,6 @@ backups/
 /dataset-catalog/data_safe_haven_dataset_csvs.zip
 
 /logs/repository_copy.log
+
+# Allow the reviewed LLM provisioning template
+!docs/llm_reader_provisioning.sql

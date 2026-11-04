@@ -67,7 +67,7 @@ def test_get_schema_context_returns_column_names_and_data_types(monkeypatch):
     ]
     cursor = RecordingCursor(rows)
     connection = RecordingConnection(cursor)
-    monkeypatch.setattr(crc, "_open_copy_connection", lambda: connection)
+    monkeypatch.setattr(crc, "_open_llm_readonly_connection", lambda: connection)
 
     result = crc.get_schema_context("proj_101")
 
@@ -103,7 +103,7 @@ def test_get_schema_context_rejects_invalid_project_id(monkeypatch):
         connection_attempted = True
         raise AssertionError("Invalid project IDs must be rejected before connecting")
 
-    monkeypatch.setattr(crc, "_open_copy_connection", unexpected_connection)
+    monkeypatch.setattr(crc, "_open_llm_readonly_connection", unexpected_connection)
 
     with pytest.raises(crc.CopyValidationError):
         crc.get_schema_context("../other_schema")
@@ -114,10 +114,98 @@ def test_get_schema_context_rejects_invalid_project_id(monkeypatch):
 def test_get_schema_context_rejects_schema_without_registered_tables(monkeypatch):
     cursor = RecordingCursor([])
     connection = RecordingConnection(cursor)
-    monkeypatch.setattr(crc, "_open_copy_connection", lambda: connection)
+    monkeypatch.setattr(crc, "_open_llm_readonly_connection", lambda: connection)
 
     with pytest.raises(crc.CopyValidationError, match="No registered dataset tables"):
         crc.get_schema_context("proj_101")
 
     assert cursor.closed
     assert connection.closed
+
+
+def test_llm_readonly_connection_uses_dedicated_credentials_without_default_schema(monkeypatch):
+    class IdentityCursor:
+        def __init__(self):
+            self.closed = False
+
+        def execute(self, query):
+            assert query == "SELECT @@port, CURRENT_USER()"
+
+        def fetchone(self):
+            return (3307, "haven_llm_reader@localhost")
+
+        def close(self):
+            self.closed = True
+
+    class IdentityConnection:
+        def __init__(self):
+            self.identity_cursor = IdentityCursor()
+            self.closed = False
+
+        def cursor(self):
+            return self.identity_cursor
+
+        def close(self):
+            self.closed = True
+
+    connection = IdentityConnection()
+    calls = {}
+    monkeypatch.setattr(
+        crc,
+        "dotenv_values",
+        lambda *_args, **_kwargs: {
+            "LLM_DB_USER": "haven_llm_reader",
+            "LLM_DB_PASSWORD": "test-only-secret",
+            "DB_HOST": "127.0.0.1",
+            "DB_PORT": "3307",
+        },
+    )
+
+    def fake_connect(**kwargs):
+        calls.update(kwargs)
+        return connection
+
+    monkeypatch.setattr(crc.mysql.connector, "connect", fake_connect)
+
+    result = crc._open_llm_readonly_connection()
+
+    assert result is connection
+    assert calls["user"] == "haven_llm_reader"
+    assert calls["password"] == "test-only-secret"
+    assert calls["port"] == 3307
+    assert "database" not in calls
+    assert connection.identity_cursor.closed
+    connection.close()
+
+
+def test_llm_readonly_connection_rejects_missing_password(monkeypatch):
+    from unittest.mock import Mock
+
+    connect = Mock()
+    monkeypatch.setattr(crc, "dotenv_values", lambda *_args, **_kwargs: {})
+    monkeypatch.setattr(crc.mysql.connector, "connect", connect)
+
+    with pytest.raises(crc.CopyValidationError, match="LLM_DB_PASSWORD"):
+        crc._open_llm_readonly_connection()
+
+    connect.assert_not_called()
+
+
+def test_llm_readonly_connection_rejects_invalid_port(monkeypatch):
+    from unittest.mock import Mock
+
+    connect = Mock()
+    monkeypatch.setattr(
+        crc,
+        "dotenv_values",
+        lambda *_args, **_kwargs: {
+            "LLM_DB_PASSWORD": "test-only-secret",
+            "DB_PORT": "65536",
+        },
+    )
+    monkeypatch.setattr(crc.mysql.connector, "connect", connect)
+
+    with pytest.raises(crc.CopyValidationError, match="between 1 and 65535"):
+        crc._open_llm_readonly_connection()
+
+    connect.assert_not_called()

@@ -502,8 +502,8 @@ def authorize_dynamic_request(
         if return_allowlist:
             raise CopyValidationError("Project authorization lookup failed")
         return 2
-    if port != 3308:
-        print("AUTHORIZATION ERROR: refusing registry connection; DB_PORT must be 3308", file=sys.stderr)
+    if not 1 <= port <= 65535:
+        print("AUTHORIZATION ERROR: DB_PORT must be between 1 and 65535", file=sys.stderr)
         if return_allowlist:
             raise CopyValidationError("Project authorization lookup failed")
         return 2
@@ -521,8 +521,8 @@ def authorize_dynamic_request(
         cursor = connection.cursor()
         cursor.execute("SELECT @@port, DATABASE()")
         server_port, active_schema = cursor.fetchone()
-        if server_port != 3308 or active_schema != SOURCE_SCHEMA:
-            raise CopyValidationError("Registry connection did not reach the approved local source schema")
+        if server_port != port or active_schema != SOURCE_SCHEMA:
+            raise CopyValidationError("Registry connection did not reach the configured source database")
 
         cursor.execute(
             "SELECT approval_status FROM control_research_projects WHERE project_id = %s",
@@ -612,7 +612,7 @@ def get_schema_context(project_id: str) -> dict[str, Any]:
         raise CopyValidationError("No registered dataset tables are available")
 
     placeholders = ", ".join(["%s"] * len(registered_tables))
-    connection = _open_copy_connection()
+    connection = _open_llm_readonly_connection()
     cursor = connection.cursor()
     try:
         cursor.execute(
@@ -688,8 +688,8 @@ def _open_copy_connection() -> Any:
         raise CopyValidationError("DB_PORT in .env must be an integer") from exc
     if not password:
         raise CopyValidationError("CLINICAL_COPY_DB_PASSWORD is missing from .env")
-    if port != 3308:
-        raise CopyValidationError("Refusing copy connection: DB_PORT must be 3308")
+    if not 1 <= port <= 65535:
+        raise CopyValidationError("DB_PORT in .env must be between 1 and 65535")
     conn = mysql.connector.connect(
         host=host, port=port, user=user, password=password,
         database=SOURCE_SCHEMA, connection_timeout=5,
@@ -699,8 +699,50 @@ def _open_copy_connection() -> Any:
     try:
         cur.execute("SELECT @@port, DATABASE(), CURRENT_USER()")
         server_port, active_schema, active_user = cur.fetchone()
-        if server_port != 3308 or active_schema != SOURCE_SCHEMA or active_user != f"{user}@localhost":
+        if server_port != port or active_schema != SOURCE_SCHEMA or active_user != f"{user}@localhost":
             raise CopyValidationError("Copy connection identity check failed")
+    finally:
+        cur.close()
+    return conn
+
+
+def _open_llm_readonly_connection() -> Any:
+    """Connect with the dedicated read-only identity used by the LLM metadata helper.
+
+    No default database is selected. The account should receive SELECT only on
+    explicitly approved repo_project_* schemas, never on haven_poc_source.
+    """
+    env = dotenv_values(ROOT_ENV)
+    user = env.get("LLM_DB_USER", "haven_llm_reader")
+    password = env.get("LLM_DB_PASSWORD")
+    host = env.get("DB_HOST", "127.0.0.1")
+    try:
+        port = int(env.get("DB_PORT", "3308"))
+    except (TypeError, ValueError) as exc:
+        raise CopyValidationError("DB_PORT in .env must be an integer") from exc
+    if not password:
+        raise CopyValidationError("LLM_DB_PASSWORD is missing from .env")
+    if not 1 <= port <= 65535:
+        raise CopyValidationError("DB_PORT in .env must be between 1 and 65535")
+
+    conn = mysql.connector.connect(
+        host=host,
+        port=port,
+        user=user,
+        password=password,
+        connection_timeout=5,
+        autocommit=True,
+        charset="utf8mb4",
+    )
+    cur = conn.cursor()
+    try:
+        cur.execute("SELECT @@port, CURRENT_USER()")
+        server_port, active_user = cur.fetchone()
+        if server_port != port or active_user != f"{user}@localhost":
+            raise CopyValidationError("LLM read-only connection identity check failed")
+    except Exception:
+        conn.close()
+        raise
     finally:
         cur.close()
     return conn
@@ -723,8 +765,8 @@ def _open_schema_provisioner_connection() -> Any:
         )
     if not re.fullmatch(r"[A-Za-z0-9_]+", user):
         raise CopyValidationError("Invalid schema-provisioner username")
-    if port != 3308:
-        raise CopyValidationError("Refusing schema-provisioning connection: DB_PORT must be 3308")
+    if not 1 <= port <= 65535:
+        raise CopyValidationError("DB_PORT in .env must be between 1 and 65535")
     conn = mysql.connector.connect(
         host=host, port=port, user=user, password=password,
         connection_timeout=5, autocommit=True, charset="utf8mb4",
@@ -733,7 +775,7 @@ def _open_schema_provisioner_connection() -> Any:
     try:
         cur.execute("SELECT @@port, CURRENT_USER()")
         server_port, active_user = cur.fetchone()
-        if server_port != 3308 or active_user != f"{user}@localhost":
+        if server_port != port or active_user != f"{user}@localhost":
             raise CopyValidationError("Schema-provisioner connection identity check failed")
     finally:
         cur.close()
@@ -1049,8 +1091,10 @@ def run_legacy_copy(check_only: bool = False) -> int:
         port = int(env.get("DB_PORT", "3308"))
     except (TypeError, ValueError):
         raise CopyValidationError("DB_PORT in .env must be an integer")
-    if not password or port != 3308:
-        raise CopyValidationError("Clinical copy credentials are missing or DB_PORT is not 3308")
+    if not password:
+        raise CopyValidationError("CLINICAL_COPY_DB_PASSWORD is missing from .env")
+    if not 1 <= port <= 65535:
+        raise CopyValidationError("DB_PORT in .env must be between 1 and 65535")
 
     connection = mysql.connector.connect(
         host=host, port=port, user=user, password=password,
@@ -1062,7 +1106,7 @@ def run_legacy_copy(check_only: bool = False) -> int:
         cursor.execute("SELECT @@port, DATABASE(), CURRENT_USER()")
         server_port, active_schema, active_user = cursor.fetchone()
         cursor.close()
-        if server_port != 3308 or active_schema != DESTINATION_SCHEMA or active_user != f"{user}@localhost":
+        if server_port != port or active_schema != DESTINATION_SCHEMA or active_user != f"{user}@localhost":
             raise CopyValidationError("MySQL connection identity check failed")
 
         table_specs = [

@@ -54,7 +54,7 @@ def client(monkeypatch):
     monkeypatch.setattr(
         api_module,
         "dotenv_values",
-        lambda *_args, **_kwargs: {"COPY_API_TOKEN": "test-token"},
+        lambda *_args, **_kwargs: {"COPY_API_TOKEN": "test-token", "ALLOW_MOCK_PAYMENT": "true"},
     )
     monkeypatch.setattr(api_module.clinical_copy, "validate_dynamic_request", lambda *_args: 0)
     monkeypatch.setattr(
@@ -70,7 +70,6 @@ def client(monkeypatch):
         "project_schema_name",
         lambda project_id: f"repo_project_{project_id}",
     )
-    monkeypatch.setattr(api_module, "get_verified_payment_status", lambda *_args: "succeeded")
     return TestClient(api_module.app)
 
 
@@ -79,13 +78,13 @@ def test_api_rejects_missing_bearer_token(client):
     assert response.status_code == 401
 
 
-def test_api_fails_closed_when_payment_verifier_is_not_configured(client, monkeypatch):
+def test_api_fails_closed_when_mock_payment_is_disabled(client, monkeypatch):
     authorize = Mock()
     monkeypatch.setattr(api_module.clinical_copy, "authorize_dynamic_request", authorize)
     monkeypatch.setattr(
         api_module,
-        "get_verified_payment_status",
-        lambda *_args: (_ for _ in ()).throw(api_module.PaymentVerificationUnavailable("not configured")),
+        "dotenv_values",
+        lambda *_args, **_kwargs: {"COPY_API_TOKEN": "test-token", "ALLOW_MOCK_PAYMENT": "false"},
     )
 
     response = client.post(
@@ -96,6 +95,27 @@ def test_api_fails_closed_when_payment_verifier_is_not_configured(client, monkey
 
     assert response.status_code == 503
     authorize.assert_not_called()
+
+
+def test_mock_payment_returns_succeeded_when_explicitly_enabled(monkeypatch):
+    monkeypatch.setattr(
+        api_module,
+        "dotenv_values",
+        lambda *_args, **_kwargs: {"ALLOW_MOCK_PAYMENT": "true"},
+    )
+
+    assert api_module.get_verified_payment_status(
+        "pay_99823", "proj_101", ["DS_PATIENT"]
+    ) == "succeeded"
+
+
+def test_mock_payment_is_disabled_when_flag_is_missing(monkeypatch):
+    monkeypatch.setattr(api_module, "dotenv_values", lambda *_args, **_kwargs: {})
+
+    with pytest.raises(api_module.PaymentVerificationUnavailable):
+        api_module.get_verified_payment_status(
+            "pay_99823", "proj_101", ["DS_PATIENT"]
+        )
 
 
 def test_api_rejects_unsuccessful_payment_before_authorization(client, monkeypatch):
@@ -168,3 +188,51 @@ def test_api_submits_authorized_request_to_existing_copy_engine(client, monkeypa
         "DS_PATIENT,DS_VISIT,DS_DIAGNOSIS",
         '{"cohort_id":"cohort_001"}',
     )
+
+
+@pytest.mark.parametrize("port", [3306, 3307, 3308, 65535])
+def test_api_accepts_valid_configured_database_ports(client, monkeypatch, port):
+    monkeypatch.setattr(
+        api_module,
+        "dotenv_values",
+        lambda *_args, **_kwargs: {
+            "COPY_API_TOKEN": "test-token",
+            "ALLOW_MOCK_PAYMENT": "true",
+            "DB_PORT": str(port),
+        },
+    )
+
+    response = client.post(
+        "/api/repository/copy",
+        json=VALID_PAYLOAD,
+        headers={"Authorization": "Bearer test-token"},
+    )
+
+    assert response.status_code == 200
+    assert response.json()["database_port"] == port
+
+
+@pytest.mark.parametrize("port", [0, 65536])
+def test_api_rejects_database_ports_outside_valid_range_before_copy(
+    client, monkeypatch, port
+):
+    copy_job = Mock(return_value=0)
+    monkeypatch.setattr(api_module.clinical_copy, "run_dynamic_copy_job", copy_job)
+    monkeypatch.setattr(
+        api_module,
+        "dotenv_values",
+        lambda *_args, **_kwargs: {
+            "COPY_API_TOKEN": "test-token",
+            "ALLOW_MOCK_PAYMENT": "true",
+            "DB_PORT": str(port),
+        },
+    )
+
+    response = client.post(
+        "/api/repository/copy",
+        json=VALID_PAYLOAD,
+        headers={"Authorization": "Bearer test-token"},
+    )
+
+    assert response.status_code == 503
+    copy_job.assert_not_called()
