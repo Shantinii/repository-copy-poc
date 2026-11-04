@@ -1,0 +1,36 @@
+# Phase 2: Mapping Review
+
+**Decision: Changes required. Mapping is not yet approved.**
+
+## 1. Review Findings
+
+- Reviewed 10 workbook sheets with 100 rows each.
+- POC scope covers patient, visit, and diagnosis tables.
+- 74 columns inventoried; 8 empty columns excluded and 66 retained.
+- Candidate keys are complete and unique in the sample.
+- Selected-table references are consistent.
+- No full duplicate rows detected.
+- Whitespace exists in text values.
+- Available visit-date chronology checks passed.
+
+## 2. Required Corrections
+
+1. **Column names:** Match the loader's actual normalisation rules. Verify before creating destination tables.
+2. **Waiting_time:** Keep as `VARCHAR(64)` until its meaning is confirmed. Do not assume it is a datetime.
+3. **Numeric fields:** Confirm meaning and value ranges before assigning numeric types. Preserve codes as text where needed.
+4. **Missing values:** Store as SQL `NULL`, not zero or `"nan"`.
+5. **Whitespace:** Agree on trimming rules. Do not alter source values silently.
+6. **QC fields:** Retain unless confirmed out of scope.
+7. **Foreign keys:** Define only after destination names and DDL are confirmed.
+
+## 3. Out-of-Scope Findings
+
+Medication, operation-procedure, and laboratory sheets require separate chronology reviews. Unmatched references in other sheets may be due to the partial sample and do not prove broken relationships.
+
+## 4. Next Steps
+
+- Verify column normalisation against the loader.
+- Confirm `Waiting_time` semantics.
+- Review numeric types and trimming rules.
+- Freeze the mapping.
+- Proceed with database integration tests.

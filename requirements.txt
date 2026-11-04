@@ -1,0 +1,9 @@
+fastapi
+uvicorn[standard]
+pydantic
+python-dotenv
+mysql-connector-python
+pandas
+openpyxl
+httpx
+pytest

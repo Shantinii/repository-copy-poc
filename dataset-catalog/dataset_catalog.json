@@ -2,51 +2,71 @@
   {
     "dataset_id": "DS_PATIENT",
     "display_label": "Patient Demographics",
-    "source_worksheet": "bi_patient data"
+    "source_worksheet": "bi_patient data",
+    "source_schema": "haven_poc_source",
+    "source_table": "bi_patient_data"
   },
   {
     "dataset_id": "DS_VISIT",
     "display_label": "Visits",
-    "source_worksheet": "bi_visit data"
+    "source_worksheet": "bi_visit data",
+    "source_schema": "haven_poc_source",
+    "source_table": "bi_visit_data"
   },
   {
     "dataset_id": "DS_DIAGNOSIS",
     "display_label": "Diagnoses",
-    "source_worksheet": "bi_diagnosis data"
+    "source_worksheet": "bi_diagnosis data",
+    "source_schema": "haven_poc_source",
+    "source_table": "bi_diagnosis_data"
   },
   {
     "dataset_id": "DS_ENDOSCOPY_PROCEDURE",
     "display_label": "Endoscopy Procedures",
-    "source_worksheet": "bi_endoscopy_procedure d"
+    "source_worksheet": "bi_endoscopy_procedure d",
+    "source_schema": "haven_poc_source",
+    "source_table": "stg_ds_endoscopy_procedure"
   },
   {
     "dataset_id": "DS_MEDICATION",
     "display_label": "Medications",
-    "source_worksheet": "bi_medication data"
+    "source_worksheet": "bi_medication data",
+    "source_schema": "haven_poc_source",
+    "source_table": "stg_ds_medication"
   },
   {
     "dataset_id": "DS_NEUROLOGY_PROCEDURE",
     "display_label": "Neurology Procedures",
-    "source_worksheet": "bi_neurology_procedure d"
+    "source_worksheet": "bi_neurology_procedure d",
+    "source_schema": "haven_poc_source",
+    "source_table": "stg_ds_neurology_procedure"
   },
   {
     "dataset_id": "DS_OPERATION_PROCEDURE",
     "display_label": "Operation Procedures",
-    "source_worksheet": "bi_operation_procedure sample d"
+    "source_worksheet": "bi_operation_procedure sample d",
+    "source_schema": "haven_poc_source",
+    "source_table": "stg_ds_operation_procedure"
   },
   {
     "dataset_id": "DS_RADIOLOGY_PROCEDURE",
     "display_label": "Radiology Procedures",
-    "source_worksheet": "bi_radiology_procedure d"
+    "source_schema": "haven_poc_source",
+    "source_worksheet": "bi_radiology_procedure d",
+    "source_table": "stg_ds_radiology_procedure"
   },
   {
     "dataset_id": "DS_LABORATORY_PROCEDURE",
     "display_label": "Laboratory Procedures",
-    "source_worksheet": "bi_laboratory_procedure "
+    "source_worksheet": "bi_laboratory_procedure ",
+    "source_schema": "haven_poc_source",
+    "source_table": "stg_ds_laboratory_procedure"
   },
   {
     "dataset_id": "DS_VITAL_SIGNS",
     "display_label": "Vital Signs",
-    "source_worksheet": "vitalsign data"
+    "source_worksheet": "vitalsign data",
+    "source_schema": "haven_poc_source",
+    "source_table": "stg_ds_vital_signs"
   }
 ]

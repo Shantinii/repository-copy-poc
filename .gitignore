@@ -36,3 +36,25 @@ data/
 Thumbs.db
 *.jsonl
 backups/
+
+# IDE and development settings
+.vscode/
+.idea/
+
+# Python testing and lint caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Local POC runtime
+.poc_runtime/
+
+# Backup and temporary files
+*.bak
+*.backup
+*.swp
+/dataset-exports/
+/dataset-catalog/DS_*.csv
+/dataset-catalog/data_safe_haven_dataset_csvs.zip
+
+/logs/repository_copy.log
