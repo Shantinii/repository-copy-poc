@@ -1,46 +1,54 @@
-﻿# Data Safe Haven: Repository-Copy POC
+# Data Safe Haven: Repository-Copy POC
 
 ## Purpose
 
-This repository contains selected scripts and documentation for the local Data Safe Haven repository-copy proof of concept.
+Local POC for copying approved clinical cohorts into project-specific MySQL schemas through an authenticated API.
 
-## Included
+## Implemented
 
-- MySQL repository-copy workflow and validation logic.
-- Supporting tests for destination safety and copy behaviour.
-- Repository-copy design and handover documentation.
+- FastAPI endpoint: `POST /api/repository/copy`.
+- Dynamic registry for 10 datasets: `docs/dataset_catalog.json`.
+- Cohort-scoped MySQL copying using `INSERT ... SELECT`.
+- Project locking, copy-job idempotency, row-count checks, and JSON logging.
+- API success manifest.
+- Schema metadata helper: `get_schema_context(project_id)`.
 
-## Scope and limitations
+## Run Locally (WSL)
 
-This is a local proof of concept, not a production service. It does not provide a frontend API, verify real payment-provider events, or implement the complete researcher-to-LLM workflow.
+From the repository root:
 
-The scripts require an appropriately configured local MySQL environment. Do not run them against production or real clinical data.
+```bash
+python -m pip install -r requirements.txt
+python -m uvicorn scripts.api:app --host 127.0.0.1 --port 8090
+```
 
-## Setup
+Open `http://127.0.0.1:8090/docs` for the API interface.
 
-Install the Python dependencies required by the scripts and configure database credentials locally. Do not commit `.env` files, credentials, workbooks, clinical data, or database exports.
+The local address is not accessible to remote machines.
 
-Review each script and its test instructions before running it.
+## Run Tests
 
-## Phase 1 workflow
+```bash
+python -m pytest -q scripts/test_api_fastapi.py scripts/test_repository_copy_api.py scripts/test_dataset_catalog_registry.py scripts/test_schema_context.py
+```
 
-The Phase 1 implementation includes:
+The tests mock database and payment operations. Passing tests do not confirm live MySQL integration or payment verification.
 
-- Inspection and mapping of all 10 approved workbook worksheets.
-- Raw staging of 1,000 sample rows across 10 MySQL staging tables.
-- Read-only verification comparing all staged rows and columns against the workbook.
-- Selected relational loading for Patient, Visit, and Diagnosis.
-- Fixed clinical repository copying for those three tables.
+## Pending
 
-The latest recorded staging verification confirmed that all 10 staging tables matched the workbook, covering 1,000 rows and 310 columns.
+- Connect a trusted server-to-server payment verifier. The API currently returns HTTP 503 until configured.
+- Configure an internal deployment address for backend access.
+- Create a separate read-only, project-scoped database account for LLM access. The current metadata helper uses the clinical copy connection.
+- Confirm cohort-key relationships for all datasets.
+- Obtain institutional IT, security, and data-governance approval before using real clinical data.
 
-## Phase 1 documentation
+**Status:** Local POC. Not production-ready or approved for real clinical-data use.
 
-- `docs/phase1_handover.md` - Implementation details, validation evidence, findings, and outstanding items.
-- `docs/repository_copy_design.md` - Repository-copy design.
-- `data_dictionary.md` - Dataset and column inventory.
-- `dataset-catalog/` - Dataset catalogue and ID mapping.
-- `schemas/` - Source schema metadata.
-- `reports/` - Staging manifest.
+## Handover Documents
 
-Dynamic researcher-specific provisioning, frontend and payment integration, and complete LLM integration are outside the implemented Phase 1 scope.
+- `docs/HANDOVER_FRONTEND_INTEGRATION.md` — API integration.
+- `docs/HANDOVER_LLM_INTEGRATION.md` — Schema metadata and read-only access.
+- `docs/HANDOVER_STATUS.md` — Implementation status and pending work.
+- `docs/repository_copy_design.md` — Architecture and security design.
+
+Do not commit `.env` files, credentials, API tokens, workbooks, clinical data, database exports, or generated logs.

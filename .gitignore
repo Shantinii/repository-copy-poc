@@ -56,3 +56,5 @@ backups/
 /dataset-exports/
 /dataset-catalog/DS_*.csv
 /dataset-catalog/data_safe_haven_dataset_csvs.zip
+
+/logs/repository_copy.log
